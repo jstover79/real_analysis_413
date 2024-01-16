@@ -1,9 +1,11 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAME HERE"
+title: "Real Analysis I"
+author: "J. Stover"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
 # Down the rabbit-hole
+
+*test edit* 
 
