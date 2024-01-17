@@ -1,11 +1,11 @@
 # Functions
 
-# Limits at infinity
+## Limits at infinity
 
-# One-sided limits
+## One-sided limits
 
-# Continuity
+## Continuity
 
-# Uniform continuity
+## Uniform continuity
 
 

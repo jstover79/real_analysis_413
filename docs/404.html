@@ -72,15 +72,31 @@
 <li><a href="./">Real Analysis I</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Foundations</a></li>
-<li class="chapter" data-level="2" data-path="real-numbers.html"><a href="real-numbers.html"><i class="fa fa-check"></i><b>2</b> Real numbers</a></li>
-<li class="chapter" data-level="3" data-path="sequences-of-real-numbers.html"><a href="sequences-of-real-numbers.html"><i class="fa fa-check"></i><b>3</b> Sequences of real numbers</a></li>
-<li class="chapter" data-level="4" data-path="infinite-series.html"><a href="infinite-series.html"><i class="fa fa-check"></i><b>4</b> Infinite series</a></li>
-<li class="chapter" data-level="5" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>5</b> Functions</a></li>
-<li class="chapter" data-level="6" data-path="limits-at-infinity.html"><a href="limits-at-infinity.html"><i class="fa fa-check"></i><b>6</b> Limits at infinity</a></li>
-<li class="chapter" data-level="7" data-path="one-sided-limits.html"><a href="one-sided-limits.html"><i class="fa fa-check"></i><b>7</b> One-sided limits</a></li>
-<li class="chapter" data-level="8" data-path="continuity.html"><a href="continuity.html"><i class="fa fa-check"></i><b>8</b> Continuity</a></li>
-<li class="chapter" data-level="9" data-path="uniform-continuity.html"><a href="uniform-continuity.html"><i class="fa fa-check"></i><b>9</b> Uniform continuity</a></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="foundations.html"><a href="foundations.html"><i class="fa fa-check"></i><b>2</b> Foundations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="foundations.html"><a href="foundations.html#the-natural-numbers-mathbb-n"><i class="fa fa-check"></i><b>2.1</b> The natural numbers, <span class="math inline">\(\mathbb N\)</span></a></li>
+<li class="chapter" data-level="2.2" data-path="foundations.html"><a href="foundations.html#the-integers-mathbb-z"><i class="fa fa-check"></i><b>2.2</b> The integers, <span class="math inline">\(\mathbb Z\)</span></a></li>
+<li class="chapter" data-level="2.3" data-path="foundations.html"><a href="foundations.html#rational-numbers"><i class="fa fa-check"></i><b>2.3</b> Rational numbers</a></li>
+<li class="chapter" data-level="2.4" data-path="foundations.html"><a href="foundations.html#real-numbers"><i class="fa fa-check"></i><b>2.4</b> Real numbers</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="large-s-1.8---some-properties-of-real-numbers.html"><a href="large-s-1.8---some-properties-of-real-numbers.html"><i class="fa fa-check"></i><b>3</b> <span class="math inline">\(\large \S\)</span> 1.8 - Some Properties of Real Numbers</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="large-s-1.8---some-properties-of-real-numbers.html"><a href="large-s-1.8---some-properties-of-real-numbers.html#some-inequality-results"><i class="fa fa-check"></i><b>3.1</b> Some inequality results</a></li>
+<li class="chapter" data-level="3.2" data-path="large-s-1.8---some-properties-of-real-numbers.html"><a href="large-s-1.8---some-properties-of-real-numbers.html#absolute-value-results"><i class="fa fa-check"></i><b>3.2</b> Absolute value results</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>4</b> Functions</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="functions.html"><a href="functions.html#limits-at-infinity"><i class="fa fa-check"></i><b>4.1</b> Limits at infinity</a></li>
+<li class="chapter" data-level="4.2" data-path="functions.html"><a href="functions.html#one-sided-limits"><i class="fa fa-check"></i><b>4.2</b> One-sided limits</a></li>
+<li class="chapter" data-level="4.3" data-path="functions.html"><a href="functions.html#continuity"><i class="fa fa-check"></i><b>4.3</b> Continuity</a></li>
+<li class="chapter" data-level="4.4" data-path="functions.html"><a href="functions.html#uniform-continuity"><i class="fa fa-check"></i><b>4.4</b> Uniform continuity</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="sequences-series-of-real-numbers.html"><a href="sequences-series-of-real-numbers.html"><i class="fa fa-check"></i><b>5</b> Sequences &amp; series of real numbers</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="sequences-series-of-real-numbers.html"><a href="sequences-series-of-real-numbers.html#sequences"><i class="fa fa-check"></i><b>5.1</b> Sequences</a></li>
+<li class="chapter" data-level="5.2" data-path="sequences-series-of-real-numbers.html"><a href="sequences-series-of-real-numbers.html#series"><i class="fa fa-check"></i><b>5.2</b> Series</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 </ul>
@@ -166,6 +182,20 @@ gitbook.start({
 });
 </script>
 
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
 </body>
 
 </html>

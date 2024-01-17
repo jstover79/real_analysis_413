@@ -5,9 +5,9 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Foundations
+# Introduction
 
-# Real numbers
+These are course notes for Math 413 Real Analysis I.
 
 
 
