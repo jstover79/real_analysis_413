@@ -5,9 +5,9 @@ date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
 
-# Down the rabbit-hole
+# Foundations
 
-*test edit* 
+# Real numbers
 
-test edit 2
+
 
