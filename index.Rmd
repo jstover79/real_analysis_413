@@ -3,6 +3,10 @@ title: "Real Analysis I"
 author: "J. Stover"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+output:
+  bookdown::gitbook:
+    includes:
+      in_header: hidejs.js
 ---
 
 # Introduction

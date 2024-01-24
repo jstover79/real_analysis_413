@@ -1,12 +1,22 @@
-# Foundations
 
+<script type="text/javascript">
+function unhide(divID) {
+var item = document.getElementById(divID);
+if (item) {
+item.className=(item.className=='hiddendiv')?'unhiddendiv':'hiddendiv';
+}
+}
+</script>
 
-
-  ```{r setup, include=FALSE}
+```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
 (last updated: `r format(Sys.time(), "%X, %B %d, %Y")`)
+
+# Foundations
+
+
 
 Here I will lay out an axiomatic system that allows the construction of the natural numbers and integers. The following notes are adapted from: <a href="http://dx.doi.org/10.2307/2311096">Margaris 1961</a>
 which I thought was a very clear step-by-step construction of the natural numbers and integers. That paper is in a large part based on Edmund Landau's Grundlagen der Analysis (Foundations of Analysis) originally in German (an electronic version of the English translation can be found <a href="https://www.math.purdue.edu/~jlipman/503/foundations-of-analysis.pdf">here</a>).

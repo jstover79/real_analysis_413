@@ -23,7 +23,7 @@
 <meta name="author" content="J. Stover" />
 
 
-<meta name="date" content="2024-01-16" />
+<meta name="date" content="2024-01-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -52,6 +52,14 @@
 <link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
 <link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script type="text/javascript">
+  function unhide(divID) {
+    var item = document.getElementById(divID);
+    if (item) {
+      item.className=(item.className=='hiddendiv')?'unhiddendiv':'hiddendiv';
+    }
+  }
+</script> 
 
 
 
@@ -118,7 +126,6 @@
             <section class="normal" id="section-">
 <div id="foundations" class="section level1 hasAnchor" number="2">
 <h1><span class="header-section-number">Chapter 2</span> Foundations<a href="foundations.html#foundations" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>(last updated: 5:04:02 PM, January 16, 2024)</p>
 <p>Here I will lay out an axiomatic system that allows the construction of the natural numbers and integers. The following notes are adapted from: <a href="http://dx.doi.org/10.2307/2311096">Margaris 1961</a>
 which I thought was a very clear step-by-step construction of the natural numbers and integers. That paper is in a large part based on Edmund Landau’s Grundlagen der Analysis (Foundations of Analysis) originally in German (an electronic version of the English translation can be found <a href="https://www.math.purdue.edu/~jlipman/503/foundations-of-analysis.pdf">here</a>).
 See also <a href="https://www.math.wustl.edu/~kumar/courses/310-2012/peano.pdf">N. M. Kumar’s 2012 Math 310 notes</a> for a nice construction of <span class="math inline">\(\mathbb N\)</span>, <span class="math inline">\(\mathbb Z\)</span>, and <span class="math inline">\(\mathbb Q\)</span> (but that paper uses the concept of <em>equivalence classes</em>).</p>
