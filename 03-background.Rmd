@@ -1,0 +1,176 @@
+# Background material
+
+(last updated: `r format(Sys.time(), "%X, %B %d, %Y")`)
+
+## Sets
+
+A set is a collection of objects. We normally indicate each distinct object by a symbol or string of symbols set between curly braces, e.g. $A=\{1,2\}$ is the set contaiing the numbers one and two, or $S=\{\text{bob, jim, jill, sue}\}$ is the set containing the for humans bob, jim, jill, and sue. Sets are unordered so that $\{\text{bob, jim, jill, sue}\}=\{\text{jim, bob, sue, jill}\}$. Two sets are said to be equal or equivalent if they contain the same members. To denote that sue is a member of set $A$ we say "$\text{sue}\in S$." We can define sets by nearly any property using notation $\{x\mid P\}$ where $p$ is some statement in mathematics or natural language, such as $\{x\mid x \text{ is even}\}$.
+
+See Section 1.1 for more thorough details.
+
+
+### Set operations
+
+**Union**
+
+$A\cup B=\{x\mid x\in A \text{ or } x\in B\}$
+
+Ex: $A=\{1,2\},B=\{2,3,4\}$, then $A\cup B=\{1,2,3,4\}$
+
+**Intersection**
+
+$A\cap B=\{x\mid x\in A \text{ and } x\in B\}$
+
+Ex: $A=\{1,2\},B=\{2,3,4\}$, then $A\cap B=\{2\}$
+
+**Set difference**
+
+$A-B=\{x\mid x\in A \text{ and } x\not\in B\}$
+
+Sometimes the set difference is denoted by $A\setminus B$, and can be said "$A$ without $B$."
+
+Ex: $A=\{1,2\},B=\{2,3,4\}$, then $A- B=\{1\}$, and $B\setminus\{3\}=\{2,4\}$.
+
+**Complement**
+
+Normally we are working within some kind of overall parent set $U$ (for universe), e.g. the real numbers or English alphabet. The complement of set $A$ is the set difference $U-A$. It is everything in the universe that is not a member of $A$. We usually denote this by $A^c=U-A$. The set difference $A-B=A\cap B^c$.
+
+Ex: If our universe or parent set is $\{1,2,3,4,5,6\}$, and $A=\{1,2\}$, then $A^c=\{3,4,5,6\}$.
+
+
+**Empty set**
+
+The empty set is denoted $\emptyset$ and is the set with no members, $\emptyset=\{\}$. Note that $\emptyset\subset A$ for any set $A$. To check this, you need to consult basic formal logic and truth tables which you encountered in Math 301.
+
+Two sets are called **disjoint** if they have empty intersection $A\cap B=\emptyset$.
+
+**Indexing sets**
+
+Note that sets can be indexed by other symbols such as $A_1,A_2,\ldots, A_k$ and we can take any mix of unions and intersections of these. In particular, given some set $A$ and suppose for each $\alpha\in A$ we have a set $B_\alpha$, then we can say we have a colleciton of sets $\{B_\alpha\}_{\alpha\in A}$. We can define the union and intersection of all sets in this colleciton:
+$$\bigcup_{\alpha\in A} B_\alpha=\{x \mid \text{ $x\in B_\alpha$ is true for at least a single $\alpha\in A$}\}$$
+$$\bigcap_{\alpha\in A} B_\alpha=\{x \mid \text{ $x\in B_\alpha$ is true for all $\alpha\in A$}\}$$
+
+**Rules for combining sets**
+
+
+Associative Laws:
+
+$(A\cup B)\cup C = A\cup (B\cup C)$<br>
+$(A\cap B)\cap C = A\cap (B\cap C)$
+
+Distributive Laws:
+
+$(A\cup B)\cap C = (A\cap C)\cup (B\cap C)$<br>
+$(A\cap B)\cup C = (A\cup C)\cap (B\cup C)$
+
+DeMorgan's Laws:
+
+$(A\cup B)^c=A^c \cap B^c$ <br>
+$(A\cap B)^c=A^c \cup B^c$
+
+$$\left(\bigcup_{\alpha\in A} B_\alpha\right)^c=\bigcap_{\alpha\in A} (B_\alpha)^c$$
+$$\left(\bigcap_{\alpha\in A} B_\alpha\right)^c=\bigcup_{\alpha\in A} (B_\alpha)^c$$
+
+<!-- Inclusion/exclusion rules (for size of sets): -->
+
+<!-- $|A\cup B| =|A|+|B|-|A\cap B|$<br> -->
+<!-- $\begin{aligned} -->
+<!-- |A\cup B\cup C| =&|A|+|B|+|C|\\ -->
+<!-- &-|A\cap B|-|A\cap C|-|B\cap C|\\ -->
+<!-- &+|A\cap B\cap C| -->
+<!-- \end{aligned}$ -->
+
+<!-- $$ -->
+<!-- \left|\bigcup_{k=1}^\infty A_k\right| -->
+<!-- =\sum_{k=1}^n|A_k|-\sum_{1\leq i<j\leq n}|A_i\cap A_j| -->
+<!-- +\sum_{1\leq i<j<k\leq n}|A_i\cap A_j\cap A_k| -->
+<!-- +\cdots +(-1)^{n-1}|A_1\cap\cdots \cap A_n| -->
+<!-- $$ -->
+
+<!-- Note that $|A|$ denotes the size of set $A$, which is the number of outcomes in the set.  -->
+
+## Cartesian products, relations, and functions
+
+If we have two sets $A,B$, then we can define another set called the cartesian product and defined by $A\times B=\{(a,b)\mid a\in A \text{ and } b\in B\}$. This is essentially just a notational convenience indicating that we are considering sets $A$ and $B$ simultaneously.
+
+A set $f$ is said to be a *relation* between $A$ and $B$ if  $f\subset A\times B$ (see Definition 1.2.1). One can also think of $f$ as a *graph*. If we has axes illustrating sets $A$ and $B$, then each $(a,b)$ is a point on a graph.
+
+A relation $f$ between $A$ and $B$ is said to be a *function* from $A$ to $B$ if for every $a\in A$ there is exactly one $b\in B$ such that $(a,b)\in f$ (see Definition 1.2.3). We normally write $f(a)=b$. $A$ is called the *domain* of $f$, and $B$ is called the *codomain* of $f$. The *range* of $f$ is denoted 
+$$f(A)=\{b\in B\mid \text{ there is some } a\in A \text{ such that } f(a)=b\}$$
+We denote the domain of $f$ by $Dom(f)$ and its range by $Ran(f)$. 
+
+The range of $f$ is also called the *image* of $A$ under $f$.
+
+A function $f: A\rightarrow B$ is called *onto* if $f(A)=B$.
+
+A function $f: A\rightarrow B$ is called *one to one* if $f(a_1)=f(a_2)$ if and only if $a_1=a_2$.
+
+A function $f: A\rightarrow B$ is called a *bijection* if it is one to one and onto.
+
+### Inverse functions
+
+If function $f$ is one to one, then we can define its inverse function $f^{-1}$. For all $x\in Dom(f)$ and $y\in Ran(f)$ we have $x\in Ran(f^{-1})$ and $y\in Dom(f^{-1})$. In other words $f:Dom(f)\rightarrow Ran(f)$ and $f^{-1}:Ran(f)\rightarrow Dom(f)$. 
+
+Recall that a function is a relation, or a subset of cartesian product: $f=\{(x,f(x)) \mid x\in Dom(f)\}$ so that its inverse function is $f^{-1}=\{(f(x),x) \mid x\in Dom(f)\}$.
+
+## Size of sets
+
+The *cardinality* of a set describes the size of the set, or how many members it has (see Definition 1.6.3). 
+
+Formally, for finite sets, if there exists a subset of $\mathbb N$ $A=\{1,2,\ldots,n\}$ such that there exists a bijection $f:A\rightarrow B$ then we say that $B$ has cardinality $n$ and denote this by $\# B=n$ or sometimes $|B|=n$. 
+
+A set  $A$ is called *countably infinite* if there exists a bijection from $\mathbb N$ to $A$, $f:\mathbb N\rightarrow A$.
+
+A set  $A$ is called *uncountable* or *uncountably infinite* if it is neither finite nor countable.
+
+A set is called *at most countable* if it is either finite or infinite but countable. Usually I say countable and consider finite sets to be countable in the sense that they can be counted out in a literal sense.
+
+Ex: $\mathbb N$ is countably infinite. Consider function $f:\mathbb N\rightarrow\mathbb N$ given by $f(n)=n$. This is a bijection since each natural number is unique.
+
+If $A\subset B$, then the cardinality of $B$ is at least the cardinality of $A$. This statement makes sense for finite sets. To extend it to infinite sets, we say that countable infinity is a greater cardinality than any finite cardinality, and that uncountable cardinality is greater than countable cardinality. See Theorem 1.6.6.
+
+
+### $\mathbb Q$ is countable
+
+The set of rational numbers is countable because there exists a bijection $f:\mathbb N\rightarrow\mathbb Q$. This means that we can list all rational numbers: $\mathbb Q=\{q_1,q_2,q_3,\ldots\}$. It is important to realize that this listing is somewhat arbitrary and has nothing to do with the ordering of rational numbers, i.e. given $n<m$ then we **do not** have that $q_n<q_m$ in our list! If we visualize the rational numbers laid out on the number line that you are used to, then this listing necessarily "jumps around" the line and does not proceed in a single direction.
+
+**Here is such a bijective $f$:**<br>
+Consider the function $f(1)=1$ and 
+$$f(n+1)=\frac{1}{\lfloor f(n) \rfloor +1 -(f(n)-\lfloor f(n) \rfloor)}$$
+for all $n\in\mathbb N$ where $\lfloor x \rfloor=$integer part of $x$, e.g. $\lfloor 12/5 \rfloor=2$.
+This function can be understood this way:
+$$f(n+1)=\frac{1}{(\text{integer part of $f(n)$}) +1 -(\text{fractional part of $f(n)$})}$$
+This function $f$ is a bijection from $\mathbb N$ to $\mathbb Q^+$.
+
+Now define $g(n)$ by $g(1)=0$ and $g(2n)=f(n)$ and $g(2n+1)=-f(n)$ for all $n\in\mathbb N$. In this way $g$ hits all positive rationals on the even terms and all negative rationals on the odd terms. Now $g$ is a bijection from $\mathbb N$ to $\mathbb Q$. Thus $\mathbb Q$ is countable. To actually prove this carefully would be difficult.
+
+This shows that we can list the rational numbers like $\mathbb Q=\{q_1,q_2,q_3,\ldots\}$. 
+
+The function $f$ actually lists out the <a href="https://en.wikipedia.org/wiki/Stern%E2%80%93Brocot_tree">Stern-Brocot tree</a> by level. The Stern-Brocot tree is a binary search tree that contains all positive rational numbers. SO we just needed to make sure we included zero and all the negative rationals, which was accomplished with the definition of $g$ here.
+
+### $\mathbb R$ is uncountable
+
+First we start with the interval $(0,1)$. See Theorem 1.6.9 for Cantor's diagonalization argument. Since $(0,1)\subset \mathbb R$ then $\mathbb R$ is also uncountable.
+
+Here is a bijection $f:(0,1)\rightarrow\mathbb R$.
+
+$$f(x)=\frac{1-2x}{x-x^2}$$
+
+
+
+
+
+\bigskip
+\bigskip
+\bigskip
+
+
+$$
+\diamond \S \diamond
+$$
+
+
+
+
+
+

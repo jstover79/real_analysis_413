@@ -1,0 +1,660 @@
+# Ordered fields and a real number system 
+<!--(Kosmala $\S$ 1.7)-->
+
+(last updated: `r format(Sys.time(), "%X, %B %d, %Y")`)
+
+
+<!-- # Real numbers -->
+
+You have worked with real numbers for a long time. What are they? How do you know they "exist"? Those are very intriguing questions! We start with developing the concept of a "field" and how the set of real numbers is a field.
+
+
+The set of Real numbers $\mathbb R$ is a *complete ordered field*. We'll now explore what that means.
+
+## Field axioms
+
+<div class="defbox">
+**Definition 1.7.1** A field, $F$, is a nonempty set together with the operations of addition and multiplication, denoted by $+$ and $\cdot$, respectively, that satisfies the following eight axioms:
+
+<ol class="axiom">
+
+<li>(Closure) For all $a,b\in F$, we have $a+b,a\cdot b\in F$.</li>
+
+<li>(Commutative) For all $a,b\in F$, we have $a+b=b+a$ and $a\cdot b=b\cdot a$.</li>
+
+<li>(Associative) For all $a,b,c\in F$, we have $(a+b)+c=a+(b+c)$ and $(a\cdot b)\cdot c=a\cdot (b\cdot c)$.</li>
+
+<li>(Additive Identity) There exists a zero element in F, denoted by $0$, such that $0+a=a$ for any $a\in F$.</li>
+
+<li>(Additive Inverse) For each $a\in F$, there exists an element $-a$ in $F$, such that $a+(-a)=0$.</li>
+
+<li>(Multiplicative Identity) There exists an element in $F$, distinct from $0$, which we denote by $1$, such that $1\cdot a=a$, for any $a\in F$.</li>
+
+<li>(Multiplicative Inverse) For each $a\in F$, with $a\neq0$, there exists an element in F denoted by $\frac1a$ or $a^{-1}$ such that $a\cdot a^{-1}=1$.</li>
+
+<li>(Distributive) For all $a,b,c\in F$, we have $a\cdot(b+c)=(a\cdot b)+(a\cdot c)$.</li>
+</ol>
+</div>
+
+## Properties of identities and inverses
+
+<div class="thmbox">
+**Theorem 1.7.2** (Uniqueness and other properties of identities and inverses)<br>
+If $F$ is a field, then
+<ol class="paren2-alpha">
+<li> both the additive and multiplicative identities are unique.</li>
+<li> both the additive and multiplicative inverses are unique.</li>
+<li> $\ 0\cdot a=0$ for any $a\in F$.</li>
+<li> $\ (-1)\cdot a =-a$ for any $a\in F$.</li>
+<li> $\ a\cdot (-b) = (-a)\cdot b=-(a\cdot b)$ for any $a,b\in F$.</li>
+<li> $\ -(-a)=a$ for any $a\in F$.</li>
+<li> if $a,b\in F$, with $a\cdot b=0$, then either $a=0$, $b=0$, or both.</li>
+</ol>
+</div>
+
+Parts (a) and (c) are proved in the text. I will show a proof of (d) here.
+
+<a href="javascript:unhide('thm172d');">Show/hide proof of Theorem 1.7.2(d).</a>
+<div id="thm172d" class="hiddendiv">
+<div class="thmbox">
+*Proof of Part (d).*
+Let $a\in F$. Then we know that $-a\in F$ by Axiom 5 (additive inverse), $(-1)\in F$ by Axioms 6 \& 5 (multiplicative identity \& additive inverse), and hence $(-1)\cdot a\in F$ by Axiom 1 (closure). So we calculate:
+$$
+\begin{aligned}
+(-1)\cdot a&=(-1)\cdot a+0 &\quad &\text{(Axiom 4, additive identity $0$ exists)}\\
+&=(-1)\cdot a+(a+(-a)) &\quad &\text{(Axiom 5, additive inverse)}\\
+&=((-1)\cdot a+a)+(-a) &\quad &\text{(Axiom 3, associative)}\\
+&=((-1)+1)\cdot a+(-a) &\quad &\text{(Axiom 8, distributive)}\\
+&=((-1)+1)\cdot a+(-a) &\quad &\text{(Axiom 6, mult. identity)}\\
+&=0\cdot a+(-a) &\quad &\text{(Axiom 4, additive identity)}\\
+&=0+(-a) &\quad &\text{(Part (c), this Theorem)}\\
+&=(-a) &\quad &\text{(Axiom 4, additive identity)}\\
+\end{aligned}
+$$
+Thus we conclude that $(-1)\cdot a=-a$ for any $a\in F$. [$\blacksquare$]{style="float:right"}
+</div>
+</div>
+
+Note that proving Part (b), that the additive inverse is unique is a separate exercise. Only going by what we have shown here, we are just showing that $(-1)\cdot a$ is equivalent to the additive inverse of $a$ ($(-1)\cdot a=-a$). There could exist strange number systems (not fields) that only satisfy some of these axioms and properties in which additive inverses might not be unique. 
+
+
+## Order axioms
+<div class="defbox">
+**Definition 1.7.3** (Order axioms).<br>
+<ol class="axiom" style="counter-reset: axiom-counter 8;">
+<li>(Trichotomy) For $a,b\in F$, exactly one of the following is true: $a=b$, $a<b$, or $a>b$.
+</li>
+
+<li>
+(Transitive) For $a,b,c\in F$, if $a<b$ and $b<c$, then $a<c$.
+</li>
+
+<li>
+For $a,b,c\in F$, if $a<b$, then $a+c<b+c$.
+</li>
+
+<li>
+For $a,b,c\in F$, if $a<b$ and $c>0$, then $ac<bc$.
+</li>
+</ol>
+</div>
+
+<div class="thmbox">
+**Theorem 1.7.4** (Some implications for an ordered field).
+<ol class="paren2-alpha">
+<li> If $a,b\in F$, then $a<b$ if and only if $-a>-b$.</li>
+<li> If $a,b,c\in F$, $a<b$ and $c<0$, then $ac>bc$.</li>
+<li> If $a\in F$ and $a\neq0$, then $a^2>0$.</li>
+<li> Suppose that $a\in F$. If $a>0$, then $\frac1a>0$, and if $a<0$, then $\frac1a<0$.</li>
+</ol>
+
+</div>
+Part (a) is proved in the text. I will prove (c) and (d) here.
+
+<a href="javascript:unhide('thm174c');">Show/hide proof of Theorem 1.7.4(c).</a>
+
+<div id="thm174c" class="hiddendiv">
+<div class="thmbox">
+*Proof of Part (c).*
+Suppose that $a\in F$ and $a\neq0$. If $a>0$ then by Axiom 12 and Theorem 1.7.2(c) we have that $a\cdot a>0\cdot a=0$. Thus $a^2>0$. 
+
+If $a<0$ then $0=a+(-a)<0+(-a)=(-a)$ (Axioms 5 and 11).  Thus $(-a)>0$. Applying the case already proven, we get $(-a)^2>0$. Now $(-a)^2=(-1)^2\cdot a^2$ (Theorem 1.7.2(d) and Axiom 2). Furthermore, $(-1)^2=-(-1)=1$ by Theorem 1.7.2(d) and (f). Thus $(-a)^2=(-1)^2\cdot a^2=1\cdot a^2=a^2$, and we conclude that $a^2>0$. [$\blacksquare$]{style="float:right"}
+</div>
+</div>
+<br>
+
+Note that this implies $1>0$ since $1=1\cdot 1=1^2$ and $1\neq0$ (Axiom 6).
+
+<a href="javascript:unhide('thm174d');">Show/hide proof of Theorem 1.7.4(d).</a>
+
+<div id="thm174d" class="hiddendiv">
+<div class="thmbox">
+*Proof of Part (d).*
+Suppose that $a\in F$ and $a\neq0$. We have that $a\cdot\frac1a=1$ (Axiom 7). We also use the fact that $1>0$ which you are to prove in homework.
+
+Let $a>0$ and assume $\frac1a<0$. Now use Axiom 12 and multiply $\frac1a<0$ across by $a$ to get $1<0$, a contradiction. Now assume $\frac1a=0$, then $1=a\cdot\frac1a=a\cdot0=0$ another contradiction. Here we used Axiom 7 and Theorem 1.7.2(b). Thus by trichotomy, $\frac1a>0$ is the only possibility.
+
+If $a<0$, then we perform the above computation with $(-a)>0$ (that follows from Theorem 1.7.4(a)) to get $\frac1{(-a)}>0$ then add $\frac1a$ to get $\frac1{a}+\frac1{(-a)}>\frac1a+0$. Now we must show that $\frac1a$ and $\frac 1{(-a)}$ are additive inverses. 
+
+We have that 
+$$
+\begin{aligned}
+(-a)\cdot\left(\frac1{a}+\frac1{(-a)}\right)
+&=(-a)\cdot\frac1{a}+(-a)\cdot\frac1{(-a)} &\quad &\text{(distributive)}\\
+&=(-1)\cdot a\cdot \frac1{a}+(-a)\cdot\frac1{(-a)} &\quad &\text{(Thm 1.7.2(d))}\\
+&=(-1)\cdot 1+1 &\quad &\text{(Mult. inverse, Axiom 7)}\\
+&=(-1)+1 &\quad &\text{(Mult. identity, Axiom 6)}\\
+&=0 &\quad &\text{(Additive inverse, Axiom 5)}\\
+\end{aligned}
+$$
+Now by Theorem 1.7.2(g) we have that $(-a)=0$ or $\left(\frac1{a}+\frac1{(-a)}\right)=0$. By our initial assumption of $a\neq0$, we have that $-a\neq0$. Thus $\left(\frac1{a}+\frac1{(-a)}\right)=0$. This implies that $\frac1{(-a)}$ is the additive inverse of $\frac1{a}$. 
+
+So we have that $\frac1{(-a)}=-\frac1{a}=(-1)\cdot\frac1{a}>0$ (using Theorem 1.7.2(d)) and we use Theorem 1.7.4(b) to multiply across by $(-1)$ and get $(-1)^2\cdot\frac1{a}<(-1)\cdot 0$. Finally we have $\frac1{a}<0$. [$\blacksquare$]{style="float:right"}
+</div>
+</div>
+<br>
+
+<!-- BY uniqueness of multiplicative inverses (Theorem 1.7.2(b)), we have that $\frac1{(-a)}=\frac1{(-1)\cdot a}=\frac1{(-1)}\cdot\frac1{a}=(-1)\frac1a$ -->
+
+## Rational numbers are an ordered field
+
+**Note about the integers.**
+The integers do not form a field! They almost do though, but just don't have multiplicative inverses (except that the integer $1$ is its own multiplicative inverse -- it is also the multiplicative identity).
+
+We now assume that the integers satisfy all field axioms except Axiom 7 (since there are no multiplicative inverses in $\mathbb Z$ for anything besides the multiplicative identity $1$). The integers also satisfy all parts of Theorem 1.7.2 except part of (b) since there are no multiplicative inverses (again except for $1$). Finally, we assume that the integers satisfy all order axioms and Theorem 1.7.4 (except (d)). Proving these facts for integers is beyond the scope of this course. 
+
+**Defining the rational numbers.**
+We define the set of rational numbers as $\mathbb Q=\{\frac ab\mid a,b\in\mathbb Z, b\neq0\}$. For any $a\in\mathbb Z$ we define the equivalence between $\mathbb Z$ and $\mathbb Q$ by $a=\frac a1\in \mathbb Q$. We assume that rational numbers of the form $\frac a1$ have all properties that the integers do, i.e. they satisfy Axioms 1-6, 8, and 9-12 and hence Theorem 1.7.2 (except some of Part (b) regarding multiplicative inverses) and Theorem 1.7.4 (except for Part (d)).
+
+We define addition and multiplication by 
+$$\frac ab\cdot \frac cd \overset{def}{=} \frac{ac}{bd}$$
+and
+$$\frac ab+ \frac cd \overset{def}{=} \frac{ad+ bc}{bd}$$
+The ordering on the rational numbers is defined below when discussing how the order axioms apply to the rational numbers.
+
+For rational numbers, we define equivalence relation:
+$$\frac ab=\frac cd \quad \text{ if and only if } \quad ad=bc$$
+Then we define the ordering on the rational numbers by:
+$$\frac ab<\frac cd \quad \text{ if and only if } \quad ad<bc$$
+$$\frac ab>\frac cd \quad \text{ if and only if } \quad ad>bc$$
+Now we have the necessary ingredients to derive all properties of rational numbers that we are accustomed to.
+
+<div class="thmbox">
+**Theorem 1.7.5**
+The set of rational numbers $\mathbb Q$ is an ordered field.
+
+<a href="javascript:unhide('rationalfield');">Show/hide proof.</a>
+
+<div id="rationalfield" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+*Proof.*
+We have to show that the set of rational numbers satisfies all 12 axioms, the field axioms of Definition 1.7.1 and the order axioms of Definition 1.7.3. 
+
+Let $\frac ab, \frac cd \in \mathbb Q$. Recall that this means that $a,b,c,d\in\mathbb Z$ with $b,d\neq0$.
+
+**Axiom 1.** (Closure under addition and multiplication)
+Using the axioms for integers $a,b,c,d\in\mathbb Z$ with $b,d\neq0$ we get:
+
+<div class="inner">
+**Multiplication.** 
+For $a,b,c,d\in\mathbb Z$, $ab,cd\in\mathbb Z$ by the assumption that $\mathbb Z$ is closed. Thus by how we have defined multiplication for rational numbers, the set $\mathbb Q$ is also closed under multiplication.
+<!-- $\frac ab\cdot \frac cd=a\cdot \frac 1b\cdot c\cdot \frac 1d=ac\cdot \frac1{bd}=\frac{ac}{bd}$ -->
+
+**Addition.** 
+For $a,b,c,d\in\mathbb Z$, $ad+bc,bd\in\mathbb Z$ by the assumption that $\mathbb Z$ is closed. Thus by how we have defined addition for rational numbers, the set $\mathbb Q$ is also closed under addition.
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- \frac ab+ \frac cd -->
+<!-- &=a\cdot\frac 1b+ c\cdot\frac 1d\\ -->
+<!-- &=\frac1{bd}\cdot bd \cdot \left(a\cdot\frac 1b+ c\cdot\frac 1d\right)\\ -->
+<!-- &=\frac1{bd}\cdot  \left(b\cdot d \cdot a\cdot\frac 1b+ b\cdot d \cdot c\cdot\frac 1d\right)\\ -->
+<!-- &=\frac1{bd}\cdot  \left(d \cdot a+ b\cdot c\right)\\ -->
+<!-- &=\frac{ad+ bc}{bd}\\ -->
+<!-- \end{aligned} -->
+<!-- $$ -->
+
+Both $\frac{ac}{bd}$ and $\frac{ad+bc}{bd}$ are in $\mathbb Q$ since we assume that sums and products of integers are integers. Hence $\mathbb Q$ is closed.
+</div>
+
+**Axiom 2.** (Commutativity of addition and multiplication)
+
+<div class="inner">
+This follows from commutativity of addition and multiplication for integers.
+
+$\frac ab \cdot\frac cd=\frac{ac}{bd}=\frac{ca}{db}=\frac cd \cdot\frac ab$ 
+
+$\frac ab+ \frac cd=\frac{ad+bc}{bd}=\frac{cb+da}{db}=\frac cd+ \frac ab$
+</div>
+
+**Axiom 3.** (Associativity)
+
+<div class="inner">
+**Multiplication**
+$$
+\left(\frac ab\cdot \frac cd\right) \cdot \frac ef=
+\left(\frac {ac}{bd}\right) \cdot \frac ef=
+\frac{ace}{bdf}
+=\frac {a}{b} \cdot \left(\frac {ce}{df}\right)
+=\frac ab\cdot \left(\frac cd \cdot \frac ef\right)
+$$
+
+**Addition**
+$$
+\begin{aligned}
+\left(\frac ab+ \frac cd\right) + \frac ef
+=\left(\frac {ad+bc}{bd}\right) + \frac ef\\
+=\frac{(ad+bc)f+e(bd)}{(bd)f}\\
+=\frac{adf+bcf+ebd}{bdf}\\
+=\frac{a(df)+b(cf+ed)}{b(df)}\\
+=\frac {a}{b} + \left(\frac {cf+ed}{df}\right)\\
+=\frac ab +\left(\frac cd + \frac ef\right)
+\end{aligned}
+$$
+</div>
+
+**Axiom 4.** (Additive identity)
+<div class="inner">
+Note that $0\in\mathbb Z$ and thus $\frac01\in\mathbb Q$. We just need to show that $\frac01$ acts as an additive identity. For any $\frac ab\in\mathbb Q$ we get that $\frac01+\frac ab=\frac{0\cdot b+1\cdot a}{1\cdot b}=\frac ab$. Thus $\frac01$ is an additive identity in $\mathbb Q$. We also have $\frac0b=\frac01$ for any nonzero $b\in\mathbb Z$ by our defined equivalence relation among rationals. Therefor we have that $\frac0b=0$ (the additive identity) for all nonzero $b$.
+</div>
+
+**Axiom 5.** (Additive inverse)
+<div class="inner">
+For $\frac ab\in\mathbb Q$ we also have that $\frac{(-a)}b , \frac{a}{(-b)} \in\mathbb Q$. We first show that $\frac{(-a)}{b}=\frac{a}{(-b)}$. 
+$$
+\begin{aligned}
+\frac{(-a)}{b}&=\frac{(-a)+0}{b}\\
+&=\frac{(-1)\cdot a+0\cdot(-1)}{(-b)\cdot (-1)}\\
+&=\frac{a}{(-b)}+\frac{0}{(-b)}\\
+&=\frac{a}{(-b)}
+\end{aligned}
+$$
+We have that $\frac ab+\frac{(-a)}b=\frac{ab+(-a)\cdot b}{b^2}=\frac{(a+(-a))\cdot b}{b^2}=\frac{0\cdot b}{b^2}=\frac{0}{b^2}=0$. Thus additive inverses exist in $\mathbb Q$.
+<!-- By a calculation nearly identical to the proof of Theorem 1.7.4(d) that $\frac1{(-a)}$ is the additive inverse of $\frac1a$. Show that $\frac1b\cdot b\cdot \left(\frac ab+\frac{(-a)}{b}\right)=0$ and that since $\frac1b\neq0$ we have that $\frac{(-a)}{b}$ is an additive inverse of $\frac ab$. -->
+</div>
+
+**Axiom 6.** (Multiplicative identity)
+<div class="inner">
+We have that $1\in\mathbb Z$, thus $\frac11\in\mathbb Q$ and $\frac11\cdot\frac ab=\frac ab$. Thus $\frac11$ is a multiplicative identity. Note that $\frac11=1$ simply by convention we denote the multiplicative identity by $1$. Thus $1\in\mathbb Q$. It also holds by the definition of our equivalence relation for rationals that $\frac aa=\frac11$ for all nonzero $a\in\mathbb Z$. 
+</div>
+
+**Axiom 7.** (Multiplicative inverse)
+<div class="inner">
+For $\frac ab\in\mathbb Q$ with $a,b\neq0$ we have that $a,b\in\mathbb Z$ and thus $\frac ba\in\mathbb Q$. Furthermore, $\frac ab\cdot \frac ba= \frac{ab}{ba}= \frac{ab}{ab}=\frac{1}{1}$. We just showed in the previous axiom that $\frac11$ is a multiplicative identity. Thus multiplicative inverses exist in $\mathbb Q$.
+</div>
+
+**Axiom 8.** (Distributive)
+<div class="inner">
+$$
+\begin{aligned}
+\frac ab \cdot \left(\frac cd + \frac ef\right)
+&= \frac ab \cdot \left(\frac {cf+ed}{df}\right)\\
+&= \frac {acf+aed}{bdf}\\
+&= \frac {acf}{bdf}+\frac {aed}{bdf}\\
+&= \frac {ac}{bd}+\frac {ae}{bf}\\
+&= \frac ab\cdot\frac cd+\frac ab\cdot\frac ef\\
+\end{aligned}
+$$
+</div>
+
+**Axiom 9.** (Trichotomy)
+<div class="inner">
+By the ordering and equivalence relations defined above and that for the integers we have trichotomy: $ad=bc$, $ad<bc$, or $ad>bc$.
+Since only one of the three possibilities can hold for the integers (by assumption), then the same is true for rational numbers.
+</div>
+
+**Axiom 10.** (Transitive)
+<div class="inner">
+If $\frac ab<\frac cd$ and $\frac cd<\frac ef$, then $ad<bc$ and $cf<de$ by the definition of "$<$" for rational numbers above in Axiom 9. Assume that $b,d,f>0$ (we can do this since we are free to put the minus sign in the numerator or denominator wtihout changing the fraction). Now we multiply one by $f$ and the other by $b$ to get $adf<bcf$ and $bcf<bde$. Since these are all integers, we apply transitivity of integers to get $(ad)f<(bd)e$. Then apply the definition of the ordering in the previous axiom to get $\frac {ad}{bd}<\frac ef$. Noting that $\frac {ad}{bd}=\frac {a}{b}\cdot \frac {d}{d}=\frac {a}{b}$ gives the result.
+</div>
+
+**Axiom 11.** (Addition preserves order)
+<div class="inner">
+Suppose $\frac ab <\frac cd$ and $\frac ef\in\mathbb Q$. Then we have that $ad<bc$,  $f^2>0$, and $bedf$ is an integer. This implies that $adf^2<bcf^2$. Hence $adf^2+bedf<bcf^2+bedf=df(af+be)<bf(cf+ed)$. This gives us that $\frac{af+be}{bf}<\frac{cf+ed}{df}$ and thus $\frac ab+\frac ef<\frac cd+\frac ef$.
+</div>
+
+**Axiom 12.** (Multiplication by a positive preserves order)
+<div class="inner">
+Suppose $\frac ab < \frac cd$ and $\frac ef>0$. Then $ad<bc$ and $ef>0$. This implies $adef<bcef$. In other words, rearranging, $(ae)(df)<(bf)(ce)$. This implies that $\frac{ae}{bf}<\frac{ce}{df}$ and hence $\frac ab \cdot \frac ef < \frac cd \cdot \frac ef$
+</div>
+
+Thus we have shown that $\mathbb Q$ satisfies all field and order axioms. [$\blacksquare$]{style="float:right"}
+</div>
+</div>
+
+## Completeness
+
+Next we explore a property that rational numbers do not satisfy, but it is extremely important to real analysis.
+
+Recall that a set $A\subset \mathbb R$ is bounded from above if there is a real number $b$ such that for all $x\in A$ we have that $x\leq b$. We say that $s\in\mathbb R$ is a *least upper bound* of $A$, also called a *supremum* of $A$, if $s\leq b$ for all upper bounds $b$.
+
+See Definition 1.2.14 for upper bounds and suprema of functions. This definition extends to sets by considering that a function being bounded meand that its range (a set of real numbers) is bounded. 
+
+<div class="defbox">
+**Definition 1.7.6** (Completeness axiom)<br>
+Suppose $F$ is an ordered field. $F$ is a *complete ordered field* if $F$ satisfies the following axiom:<br>
+<div class="inner">
+(A13)
+<div class="inner2">Every nonempty subset $S$ of $F$ that has an upper bound has the least upper bound, which is an element of $F$.
+</div>
+</div>
+</div>
+
+**Creation of the real numbers.**
+Now we define $\mathbb R$ so that $\mathbb Q\subset\mathbb R$ and assume that all real numbers satisfy the field and order axioms.
+
+The next theorem is referred to as *the approximation property of suprema*. It shows that the supremum of a set of real numbers can be approximated arbitrarily well by an element of the set.
+
+<div class="thmbox">
+**Theorem 1.7.7** (Approximation property of suprema)
+Suppose that $S$ is a nonempty subset of $\mathbb R$ and $k$ is an upper bound of $S$. Then $k$ is the least upper bound of $S$ if and only if for each $\epsilon>0$ there exists $s\in S$ such that $k-\epsilon<s$.
+
+<a href="javascript:unhide('thm177');">Show/hide proof.</a>
+
+<div id="thm177" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+*Proof.*
+Let $S$ be a nonempty subset of $\mathbb R$ and $k$ be an upper bound of $S$.
+
+<div style="padding-left: 54px;">
+<ul>
+<li style="list-style: '(&#8658;)'; padding-left: 12px;"> <!--($\Rightarrow$)-->
+Suppose that $k=\sup S$ (the supremum a.k.a. least upper bound). Let $\epsilon>0$ be any positive real number. Then $k-\epsilon<k$, and $k-\epsilon$ is not an upper bound of $S$ since $k$ is the smallest upper bound. This implies that there is an element of $S$ that is above $k-\epsilon$, i.e. that there is an $s\in S$ such that $k-\epsilon<s\leq k$.
+</li>
+<li style="list-style: '(&#8656;)'; padding-left: 12px;"> <!--($\Leftarrow$)-->
+Suppose there exists $s\in S$ such that $k-\epsilon<s$ for any $\epsilon>0$. Also let $M$ be a real number such that $M<k$ and $M$ is an upper bound of $S$. We want to show that no such upper bound can actually exist since we want to prove that $k=\sup S$. Consider $\epsilon=k-M>0$ for a value of $\epsilon$. By assumption, we know there exists $s\in S$ such that $k-\epsilon<s$ (for our chosen $\epsilon$). This implies that $k-\epsilon=k-(k-M)=M<s$, but $M$ is supposed to be an upper bound of $S$ which requires $s\leq M$. Thus we have a contradiction. We conclude that $k$ is in fact the least upper bound of $S$.[$\blacksquare$]{style="float:right"}
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="exbox">
+***Example:***
+<div class="inner">
+Consider the set $S=\{x\in \mathbb R\mid x<2 \}\subset\mathbb R$.
+
+Intuitively $\sup S=2$. 
+
+Let $\epsilon=\frac1{100}$. Then we know that $2-\frac1{100}=\frac{199}{100}<2$ and thus we can just go slightly above that by adjusting the top and bottom of the fraction: $\frac{199}{100}=\frac{1990}{1000}<\frac{1995}{1000}<2$. We can do this endlessly to find many elements of $S$, and can do it for any $\epsilon$. [$\square$]{style="float:right"}
+</div>
+</div>
+
+<div class="exbox">
+***Example:***
+<div class="inner">
+Consider the set $S=\{x\in \mathbb Q\mid x<2 \}\subset\mathbb R$.
+
+Clearly $2$ is an upper bound on this set since every $q\in S$ satisfies $q<2$. 
+<!-- If $b$ is an upper bound on $S$, then $b\geq2$.  -->
+If $b$ is an upper bound on $S$ that satisfies $b<2$, then let $\epsilon=2-b>0$ and by Thm 1.7.7 there is another rational number $q\in S$ such that $2-\epsilon<q$. Pluggin in what we have set $\epsilon$ as gives $2-(2-b)=b<q$. This is a contradiction since $q\in S$ and $b$ is supposed to be an upper bound on $S$. Hence we conclude that $b\geq2$ is the only possibility for any upper bound $b$. Thus $2=\sup S$ is the least upper bound. [$\square$]{style="float:right"}
+</div>
+</div>
+
+Note that $\mathbb Q$ is <u>NOT</u> complete!
+
+<div class="exbox">
+***Counterexample:***
+<div class="inner">
+Consider the set $S=\{x\in \mathbb Q\mid x<\pi \}\subset\mathbb R$.
+
+This is definitely a nonempty set, since $3<\pi$. Recall that $\pi=3.1415\ldots$ and assume that by definition it is not rational. 
+
+Recall that we are assuming that the set of real numbers satisfies all 13 axioms. Repeat the exact argument as in the previous example but replacing $2$ by $\pi$. We conclude that $\pi$ is the supremum of this set, but $\pi$ is not rational (by assumption for us). We have just demonstrated a subset of $\mathbb Q$ that does not have a supremum in $\mathbb Q$. Therefore $\mathbb Q$ does not satisfy the completeness axiom!  Note that this is not a proof, but just an illustration of why we need irrationals. [$\square$]{style="float:right"}
+</div>
+</div>
+
+The intuitive idea here is that the real numbers form a *continuum*, an unbroken line, like a classical line of geometry extending to infinity in both directions. The rational numbers are all part of the continuum but do not form a continuum on their own: $\mathbb Q$ is "holey."
+
+
+<div class="thmbox">
+**Theorem 1.7.8** 
+(Archimedean Order Property of $\mathbb R$). Let $x$ be any real number. Then there exists a positive integer $n^*$ greater than $x$.
+
+<a href="javascript:unhide('thm178');">Show/hide proof of Theorem 1.7.8.</a>
+
+<div id="thm178" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+*Proof By Contradiction.* 
+Suppose $x$ is an upper bound for $\mathbb N$. Now $\mathbb N$ is a nonempty subset of $\mathbb R$ and $\mathbb R$ satisfies the Completeness Axiom (Axiom 13). Thus, by the Completeness Axiom, there exists an $m\in\mathbb R$ such that $m=\sup \mathbb N$. Then $m-1$ is not an upper bound of $\mathbb N$.
+Let $\epsilon=1$. Then by Theorem 1.7.7, there exists $n_1\in\mathbb N$ such that $m-\epsilon=m-1<n_1$ Now, $m-1<n_1 \Rightarrow m<n_1+1$ and $n_1+1\in\mathbb N$. This contradicts that $m$ is the least upper bound of $\mathbb N$.
+We conclude that the set of natural numbers does not have anny upper bounds. In other words, that every real number $x$ has a natural number $N^*$ above it $x<n^*$. 
+<!-- </div> -->
+[$\blacksquare$]{style="float:right"}
+</div>
+</div>
+
+<div class="exbox">
+***Example:***
+<div class="inner">
+Let $x=\pi$, then $n^*=4$ works.<br>
+If $x=78.3$, then $n^*=100$ works.<br>
+There are in fact many choices for $n^*$ in any case, in fact, always infinitely many choices!
+ [$\square$]{style="float:right"}
+</div>
+</div>
+
+<div class="thmbox">
+**Theorem 1.7.9** 
+The following are equivalent statements:
+<ol class="paren2-alpha">
+<li> 
+The Archimedean order property of $\mathbb R$.</li>
+<li> 
+For any $x,y\in\mathbb R^+$, there exists $n\in\mathbb N$ such that $y<nx$.</li>
+<li> 
+For any $x\in\mathbb R^+$, there exists $n\in\mathbb N$ such that $\frac1n<x$.</li>
+<li> 
+The set $\mathbb N$ is unbounded.</li>
+<li> 
+For any $x\in\mathbb R^+$, there exists $n\in\mathbb N$ such that $n-1\leq x< n$.</li>
+</ol>
+
+<a href="javascript:unhide('thm179');">Show/hide proof.</a>
+
+<div id="thm179" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+*Proof.*
+<div style="padding-left: 54px;">
+<ul>
+<li style="list-style: '(a &#8658; b) '; padding-left: 12px;">
+For any positive real numbers $x,y$ we have that $\frac yx$ is a positive real number, therefore by the Archimedean property, there is a natural number $n$ such that $\frac yx<n$ which implies that $y<nx$.
+</li>
+
+<li style="list-style: '(b &#8658; c) '; padding-left: 12px;">
+Let $x\in\mathbb R^+$, and we have that $1\in\mathbb R^+$. Now applying part (b) we have that there exists $n\in\mathbb N$ such that $1<nx$. Multiply by $n^{-1}$ to get $\frac1n<x$.
+<!-- For $x\in\mathbb R^+$, by the Archimedean property we know that there exists $n\in\mathbb N$ such that $\frac1x<n$. Rearranging gives $\frac1n<x$. -->
+</li>
+
+<li style="list-style: '(c &#8658; d) '; padding-left: 12px;"> 
+If $\mathbb N$ is bounded, then it is bounded by some real number. Suppose there exists $x\in\mathbb R$ such that $n\leq x$ for all $n\in\mathbb N$. Since $n>0$ we know $x>0$ and thus $\frac1x>0$. Then $n\leq x$ rearranges to $\frac1x\leq\frac1n$. Recall we are assuming this for all $n\in\mathbb N$. By (c) we know that there exists $n_1\in\mathbb N$ such that $\frac1{n_1}<\frac1x$. This is a contradiction since we assume that no such $n_1$ existed.
+</li>
+
+<li style="list-style: '(d &#8658; e) '; padding-left: 12px;">
+Let $S=\{m\in \mathbb N\mid x<m\}$. This is a nonempty subset of $\mathbb N$ and thus by the Well Ordering Principle (Axiom 1.3.1) $S$ has a smallest element $n$. Hence $n-1\notin S$, and that implies that $n-1\leq x$, but $n\in S$ implies $x<n$. Putting these two together gives $n-1\leq x<n$.
+</li>
+
+<li style="list-style: '(a &#8656; e) '; padding-left: 12px;"> 
+If for any $x\in\mathbb R^+$ we have an $n\in\mathbb N$ such that $n-1\leq x<n$, then we have found an $n^*=n>x$. This is precisely the requirement of the Archimedean Property, i.e. for any $x\in \mathbb R$, we can find a natural number above $x$. One caveat is that we started with a positive real number, but $n^*=1\in\mathbb N$ is greater than every negative real number (and zero too). 
+</li>
+</ol>
+</div>
+
+We have shown that $a\Rightarrow b\Rightarrow c \Rightarrow d \Rightarrow e \Rightarrow a$ and hence every part implies every other part which shows they are all equivalent conditions. [$\blacksquare$]{style="float:right"}
+</div>
+</div>
+
+
+## Existence of $\sqrt 2$
+
+Now we are ready to see the existence of an irrational number!
+
+<!-- ***Example:*** --> <!-- Corrolary.--> 
+<!-- <div class="inner"> -->
+Consider the set $S=\{x\in \mathbb R\mid x^2 < 2 \}\subset\mathbb R$. Intuitively $\sup S=\sqrt2$, but how do we know that we are allowed to take square roots?
+
+We define "$\sqrt{ \ \ }$" notation by the following: for $b\in\mathbb R$, if $b^2=a$, then we say $b=\sqrt a$.
+
+Note that $S$ is a nonempty set and thus Axiom 13 implies that this set $S$ has a least upper bound that is also a real number, i.e. that $b=\sup S$ exists and $b\in\mathbb R$. We simply denote this least upper bound $b$ by the notation $\sqrt 2$, i.e. that
+$$\sqrt 2 \overset{def}{=}\sup\{x\in \mathbb R\mid x^2 < 2 \}\in\mathbb R$$
+
+We know that $b$ exists (by Axiom 13) and hence $b^2$ exists. By Trichotomy, either $b^2=2$, $b^2<2$ or $b^2>2$. We eliminate the last two by contradiction.
+
+<div class="thmbox">
+**Theorem.** (not in text) There exists $b\in\mathbb R$ such that $b^2=2$. We denote $b$ by $\sqrt 2$.
+
+<a href="javascript:unhide('thmsqrt2');">Show/hide proof.</a>
+
+<div id="thmsqrt2" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+*Proof that $(\sqrt 2)^2=2$*
+
+We first assume that $b=\sup S$ as defined above.
+<ol class="cases-upper-roman">
+<li>
+Assume $b^2<2$. Then there exists an $n\in\mathbb N$ and $a\in S$ such that $b^2+\frac{2b}n+\frac1{n^2}=\left(b+\frac1n\right)^2<2$. To see that such an $n$ exists, recall that $b^2<2$ and $b>0$. Then $0<2-b^2$ and $2b+1>0$, thus we can find $n\in\mathbb N$ such that $2b+1<n(2-b^2)$ by Theorem 1.7.9(b). Thus $(2b+1)n<n^2(2-b^2)$. We also have $n \geq 1$, and thus $2bn+1\leq(2b+1)n<n^2(2-b^2)$. Dividing by $n^2$ gives $\frac{2b} n+\frac1{n^2}<2-b^2$. Rearranging this and factoring gives $\left(b+\frac1n\right)^2<2$.
+<!-- <br><br> -->
+This implies that $b+\frac1n\in S$ and hence we have found an element of $S$ that is greater than $\sup S$, a contradiction.
+<!-- </div> -->
+<!-- </div> -->
+</li>
+
+<li>Assume $b^2>2$. Then there exists an $n\in\mathbb N$ such that $b^2-\frac{2b}n+\frac1{n^2}=\left(b-\frac1n\right)^2>2$. The argument showing the existence of such an $n$ is very similar to above: $b^2>2$ so that $b^2-2>0$. We also know that $b>0$. 
+<!-- since it isn't hard to find a rational number $a\in S$ that is greater than $1$ but satisfying $a^2<2$ ($a=\frac43$ works or any rational of the form $a=\frac{k+1}{k}$ works) so that $2b-1>0$.  -->
+Now we know there is an $n\in\mathbb N$ such that $n(b^2-2)>2b$ and thus $n^2(b^2-2)>n2b$. So $b^2-2>\frac{2b}{n}>\frac{2b}{n}-\frac1{n^2}$. Then rearranging gives $2< b^2-\frac{2b}{n}+\frac1{n^2}=(b-\frac1n)^2$.
+<!-- <br> -->
+Theorem 1.7.7 gives that there exists $a\in S$ with $b-\frac1n<a$. This implies that $2< (b-\frac1n)^2<a^2$, a contradiction since $a\in S$ implies $a^2<2$.
+<!-- This implies that $b-\frac1n$ is an upper bound on $S$. This is also a contradiction since $b-\frac1n<b$ but $b$ is the smallest upper bound on $S$. -->
+<!-- </div> -->
+<!-- </div> -->
+</li>
+</ol>
+
+<!-- Note that I am now overlooking some technicalities here, for example, in assuming that there exists an $n\in\mathbb N$ such that $b^2+\frac{2b}n+\frac1{n^2}<2$. Proving this requires a careful application of the Archimedean property, Axioms 1-12, and Theorem 1.7.9. Here is a somewhat tricky proof of that for Case I, if you wish to see it: <a href="javascript:unhide('sqrt2boundproof');">show/hide</a>. -->
+
+<!-- <div id="sqrt2boundproof" class="hiddendiv"> -->
+<!-- <div class="reveal" style="border-width: 0;"> -->
+<!-- Suppose $b^2<2$ and $b>0$. Then $0<2-b^2$ and $2b+1>0$, thus we can find $n\in\mathbb N$ such that $2b+1<n(2-b^2)$ by Theorem 1.7.9(b). Thus $(2b+1)n<n^2(2-b^2)$. We also have $n \geq 1$, and thus $2bn+1\leq(2b+1)n<n^2(2-b^2)$. Dividing by $n^2$ gives $\frac{2b} n+\frac1{n^2}<2-b^2$. Rearranging this and factoring gives $\left(b+\frac1n\right)^2<2$. -->
+<!-- </div> -->
+<!-- </div> -->
+
+Since $b^2>2$ and $b^2<2$ are both eliminated, then by trichotomy, $b^2=2$ and we have demostrated that $\sqrt2$ is indeed a real number.
+[$\blacksquare$]{style="float:right"}
+</div>
+</div>
+<!-- </div> -->
+
+<br>
+
+It is not too complicated to prove that $\sqrt 2$ is not a rational number (see Example 1.4.3). This example illustrates that the existence of $\sqrt 2$ as a real number depends on that fact that we assume Axiom 13 is true for the set of real numbers. Note that nearly an identical argument shows the existence of $\sqrt a$ for any positive $a\in\mathbb R$. Proving the existence of higher roots is more tricky, but can be done by induction.
+
+
+<!-- **Theorem.** (not in text) $\sqrt 2$ is irrational. -->
+<div class="thmbox">
+**Remark.** (not in text) If $n\in\mathbb N$ and $n$ is not the perfect square of another natural number, then it is not a perfect square of a rational, hence $\sqrt n$ is irrational. This is given without proof, but you can find proof by searching online. It is very similar to the proof that $\sqrt2$ is irrational.
+</div>
+
+## Density of $\mathbb Q$ in $\mathbb R$
+
+
+The next theorem tells us somethign about the relationship between the reals and rationals. It happens to be true that every interval on the real line contains both rationals and irrationals, in fact it contains infinitely-many of each! 
+
+The rationals are called *dense* in $\mathbb R$ since they sort of fill up the real line almost entirely in the sense that every interval, no matter how small, contains rational numbers. Imagine a ruler with very fine resolution and individual black marks demarcating the different measurements available. You might imagine the resolution so fine that, unless you look at it with a microscope, you won't be able to tell the ruler markings apart and it will just look like a continuous black smear. Although, you know that if you zoom in enough, you will be able to tell teh individual markings apart. The concept of density is kind of like this. From our perspective, the rational numbers essentially fill up the entire real number line, but if you have the proper mathematical tools, you can zoom in and see that there are uncountably-many gaps between the rational numbers.
+
+<div class="thmbox">
+**Theorem 1.7.10**
+Every open interval $(a,b)$ contains both a rational number and an irrational number.
+
+<a href="javascript:unhide('thm1710');">Show/hide proof.</a>
+
+<div id="thm1710" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+*Proof.* <!--Omitted.-->
+Let $a,b\in \mathbb R$ with $a<b$. So we have that $(a,b)=\{x\in \mathbb R\mid a<x \text{ and } x<b\}$.
+
+<ol class="cases-upper-roman">
+<li>
+<!-- <div class="inner"> -->
+<!-- <ul> -->
+<!-- <li style="list-style: '<u>Case I</u> '; padding-left: 12px;"> -->
+<!-- <u>Case I</u>. -->
+<!-- <div class="inner2" style="padding-left: 12px;"> -->
+Suppose $0<a<b$. Let $x=b-a$ and $y=1$, then by Theorem 1.7.9(b), there exists an $n^*\in\mathbb N$ such that $1<n^*(b-a)$ or $\frac1{n^*}<b-a$. Let $S=\left\{n\in\mathbb N \mid \frac n{n^*}>a\right\}$. $S$ is nonempty, hence by the well ordering principle, there is a least element in $S$, $n_0$. Then $\frac{n_0}{n^*}>a$ and $\frac{n_0-1}{n^*}\leq a$ or $\frac{n_0}{n^*}-\frac{1}{n^*}\leq a$ . Then $\frac{n_0}{n^*}\leq \frac{1}{n^*} +a < (b-a) +a=b$. That is, $\frac{n_0}{n^*}>a$ and $\frac{n_0}{n^*}<b$. Thus $\frac{n_0}{n^*}\in(a,b)$ and we found a rational number in this interval.
+<!-- </div> -->
+<!-- </div> -->
+<!-- </li> -->
+<!-- </ul> -->
+</li>
+
+<li>
+<!-- <div class="inner">  -->
+<!-- <u>Case II</u>. -->
+<!-- <div class="inner2" style="padding-left: 12px;"> -->
+Suppose $a\leq 0<b$. By Theorem 1.7.9, part (c), there exists $n^*\in\mathbb N$, such that $\frac1{n^*}<b$. Thus, the rational number $\frac1{n^*}\in(a,b)$.
+<!-- </div> -->
+<!-- </div> -->
+</li>
+
+<li>
+<!-- <div class="inner"> <u>Case III</u>. -->
+<!-- <div class="inner2" style="padding-left: 12px;"> -->
+Suppose $a<b\leq 0$. Then $0\leq -b <-a$. By Case I, there is a rational number $r\in(-b,-a)$. Thus, the rational number $-r\in(a,b)$.
+<!-- </div> -->
+<!-- </div> -->
+</li>
+</ol>
+
+Now we have covered all possible cases for intervals of the form $(a,b)$, and they all contain at least one rational number.
+
+Now suppose $a<b$. Then there exists a nonzero rational number $r\in\left(\frac a{\sqrt2} , \frac b{\sqrt2} \right)$. Hence $\frac a{\sqrt2} < r< \frac b{\sqrt2}$ which gives $a<r\sqrt2<b$. It also happens to be true that $r\sqrt2$ is irrational. Thus any interval $(a,b)$ contains an irrational.
+[$\blacksquare$]{style="float:right"}
+</div>
+</div>
+
+
+
+
+This last theorem is extremely interesting! You should recall that the rational numbers are countable and the irrationals are uncountable. See Theorems 1.6.8 and 1.6.9. If there is an irrational number between every two rational numbers and a rational number in between every two irrationals, then it feels intuitive that there are equivalent amount of each, but that intuition is misleading. Comparing infinities can give strange results! Since the irrationals are uncountable, there are really many more of them, in a sense.
+
+
+<!-- **[\*\*EDIT\*\*] insert discussion on algebraic vs transcendental numbers (or leave out?)** -->
+
+## Types of real numbers
+
+We already have the natural numbers, the integers, the rationals, and the irrationals. The irrational numbers are also classified as to whether or not they are the root of a polynomial with integer coefficients.
+
+<div class="defbox">
+**Definition** A real number $a\in\mathbb R$ is called *algebraic* if there is a polynomial $f(x)=a_n x^n+a_{n-1}x^{n-1}+\cdots a_1x+a_0$ whose coefficients are all integers, $a_i\in\mathbb Z$ for all $i=0,1,\ldots,n$, such that $a$ is a zero of this polynomial, $f(a)=0$.
+</div>
+
+<div class="defbox">
+**Definition** A real number $a\in\mathbb R$ is called *transcendental* if it is not algebraic.
+</div>
+
+The set of transcendental numbers has been proven to be uncountably infinite.
+
+<div class="exbox">
+***Example:***
+<div class="inner">
+$\sqrt2$ is algebraic since it is a zero of the polynomial $f(x)=x^2-2$.
+
+The irrational numbers $\pi$ and $e$ are transcendental. Proving this is generally very difficult. There are many famous transcendental numbers.
+</div>
+</div>
+
+All rational numbers are algebraic. Let $\frac ab\in\mathbb Q$, then this number is a root of polynomial $f(x)=ax-b$.
+
+
+\bigskip
+\bigskip
+\bigskip
+
+$$
+\diamond \S \diamond
+$$
+
+
+
+
+
+
