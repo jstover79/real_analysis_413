@@ -1,4 +1,3 @@
-
 # Some properties of real numbers 
 
 (last updated: `r format(Sys.time(), "%X, %B %d, %Y")`)
