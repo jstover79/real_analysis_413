@@ -2,5 +2,9 @@
 
 ## Sequences
 
+A sequence of a function whose domain is the natural numbers $f(n)$ with $f:\mathbb N\to\mathbb R$. An example is $f(n)=\frac1n$ which gives the sequence $1,\frac12,\frac13,\ldots$. 
+
+Often we use subscript notation instead: $x_n=f(n)$ or $a_k=f(k)$. It is typical to use some kind of bracket notation too: $(x_n)_{n\in\mathbb N}$ or $\{x_n\}_{n\in\mathbb N}$. I prefer using parentheses and not curly braces as I like to restrict curly braces for sets. A sequence is not a set. Here is anothe rcommon notation: $(x_n)_{n=1,2,\ldots}$.
+
 ## Series
 
