@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 4 Ordered fields and a real number system | Real Analysis I</title>
+  <meta name="description" content="Chapter 4 Ordered fields and a real number system | Real Analysis I" />
+  <meta name="generator" content="bookdown 0.46 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 4 Ordered fields and a real number system | Real Analysis I" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 4 Ordered fields and a real number system | Real Analysis I" />
+  
+  
+  
+
+<meta name="author" content="J. Stover" />
+
+
+<meta name="date" content="2026-02-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="background-material.html"/>
+<link rel="next" href="some-properties-of-real-numbers.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+<script type="text/javascript">
+  function unhide(divID) {
+    var item = document.getElementById(divID);
+    if (item) {
+      item.className=(item.className=='hiddendiv')?'unhiddendiv':'hiddendiv';
+    }
+  }
+</script> 
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Real Analysis I</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Introduction</a></li>
+<li class="chapter" data-level="2" data-path="foundations.html"><a href="foundations.html"><i class="fa fa-check"></i><b>2</b> Foundations</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="foundations.html"><a href="foundations.html#the-natural-numbers-mathbb-n"><i class="fa fa-check"></i><b>2.1</b> The natural numbers, <span class="math inline">\(\mathbb N\)</span></a></li>
+<li class="chapter" data-level="2.2" data-path="foundations.html"><a href="foundations.html#the-integers-mathbb-z"><i class="fa fa-check"></i><b>2.2</b> The integers, <span class="math inline">\(\mathbb Z\)</span></a></li>
+<li class="chapter" data-level="2.3" data-path="foundations.html"><a href="foundations.html#rational-numbers"><i class="fa fa-check"></i><b>2.3</b> Rational numbers</a></li>
+<li class="chapter" data-level="2.4" data-path="foundations.html"><a href="foundations.html#real-numbers"><i class="fa fa-check"></i><b>2.4</b> Real numbers</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="background-material.html"><a href="background-material.html"><i class="fa fa-check"></i><b>3</b> Background material</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="background-material.html"><a href="background-material.html#sets"><i class="fa fa-check"></i><b>3.1</b> Sets</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="background-material.html"><a href="background-material.html#set-operations"><i class="fa fa-check"></i><b>3.1.1</b> Set operations</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="background-material.html"><a href="background-material.html#cartesian-products-relations-and-functions"><i class="fa fa-check"></i><b>3.2</b> Cartesian products, relations, and functions</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="background-material.html"><a href="background-material.html#inverse-functions"><i class="fa fa-check"></i><b>3.2.1</b> Inverse functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="background-material.html"><a href="background-material.html#size-of-sets"><i class="fa fa-check"></i><b>3.3</b> Size of sets</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="background-material.html"><a href="background-material.html#mathbb-q-is-countable"><i class="fa fa-check"></i><b>3.3.1</b> <span class="math inline">\(\mathbb Q\)</span> is countable</a></li>
+<li class="chapter" data-level="3.3.2" data-path="background-material.html"><a href="background-material.html#mathbb-r-is-uncountable"><i class="fa fa-check"></i><b>3.3.2</b> <span class="math inline">\(\mathbb R\)</span> is uncountable</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="ordered-fields-and-a-real-number-system.html"><a href="ordered-fields-and-a-real-number-system.html"><i class="fa fa-check"></i><b>4</b> Ordered fields and a real number system</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="ordered-fields-and-a-real-number-system.html"><a href="ordered-fields-and-a-real-number-system.html#field-axioms"><i class="fa fa-check"></i><b>4.1</b> Field axioms</a></li>
+<li class="chapter" data-level="4.2" data-path="ordered-fields-and-a-real-number-system.html"><a href="ordered-fields-and-a-real-number-system.html#properties-of-identities-and-inverses"><i class="fa fa-check"></i><b>4.2</b> Properties of identities and inverses</a></li>
+<li class="chapter" data-level="4.3" data-path="ordered-fields-and-a-real-number-system.html"><a href="ordered-fields-and-a-real-number-system.html#order-axioms"><i class="fa fa-check"></i><b>4.3</b> Order axioms</a></li>
+<li class="chapter" data-level="4.4" data-path="ordered-fields-and-a-real-number-system.html"><a href="ordered-fields-and-a-real-number-system.html#rational-numbers-are-an-ordered-field"><i class="fa fa-check"></i><b>4.4</b> Rational numbers are an ordered field</a></li>
+<li class="chapter" data-level="4.5" data-path="ordered-fields-and-a-real-number-system.html"><a href="ordered-fields-and-a-real-number-system.html#completeness"><i class="fa fa-check"></i><b>4.5</b> Completeness</a></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Real Analysis I</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="ordered-fields-and-a-real-number-system" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Chapter 4</span> Ordered fields and a real number system<a href="ordered-fields-and-a-real-number-system.html#ordered-fields-and-a-real-number-system" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<!--(Kosmala $\S$ 1.7)-->
+<p>(last updated: 2:52:40 PM, February 10, 2026)</p>
+<!-- # Real numbers -->
+<p>You have worked with real numbers for a long time. What are they? How do you know they “exist”? Those are very intriguing questions! We start with developing the concept of a “field” and how the set of real numbers is a field.</p>
+<p>The set of Real numbers <span class="math inline">\(\mathbb R\)</span> is a <em>complete ordered field</em>. We’ll now explore what that means.</p>
+<div id="field-axioms" class="section level2 hasAnchor" number="4.1">
+<h2><span class="header-section-number">4.1</span> Field axioms<a href="ordered-fields-and-a-real-number-system.html#field-axioms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="defbox">
+<p><strong>Definition 1.7.1</strong> A field, <span class="math inline">\(F\)</span>, is a nonempty set together with the operations of addition and multiplication, denoted by <span class="math inline">\(+\)</span> and <span class="math inline">\(\cdot\)</span>, respectively, that satisfies the following eight axioms:</p>
+<ol class="axiom">
+<li>
+(Closure) For all <span class="math inline">\(a,b\in F\)</span>, we have <span class="math inline">\(a+b,a\cdot b\in F\)</span>.
+</li>
+<li>
+(Commutative) For all <span class="math inline">\(a,b\in F\)</span>, we have <span class="math inline">\(a+b=b+a\)</span> and <span class="math inline">\(a\cdot b=b\cdot a\)</span>.
+</li>
+<li>
+(Associative) For all <span class="math inline">\(a,b,c\in F\)</span>, we have <span class="math inline">\((a+b)+c=a+(b+c)\)</span> and <span class="math inline">\((a\cdot b)\cdot c=a\cdot (b\cdot c)\)</span>.
+</li>
+<li>
+(Additive Identity) There exists a zero element in F, denoted by <span class="math inline">\(0\)</span>, such that <span class="math inline">\(0+a=a\)</span> for any <span class="math inline">\(a\in F\)</span>.
+</li>
+<li>
+(Additive Inverse) For each <span class="math inline">\(a\in F\)</span>, there exists an element <span class="math inline">\(-a\)</span> in <span class="math inline">\(F\)</span>, such that <span class="math inline">\(a+(-a)=0\)</span>.
+</li>
+<li>
+(Multiplicative Identity) There exists an element in <span class="math inline">\(F\)</span>, distinct from <span class="math inline">\(0\)</span>, which we denote by <span class="math inline">\(1\)</span>, such that <span class="math inline">\(1\cdot a=a\)</span>, for any <span class="math inline">\(a\in F\)</span>.
+</li>
+<li>
+(Multiplicative Inverse) For each <span class="math inline">\(a\in F\)</span>, with <span class="math inline">\(a\neq0\)</span>, there exists an element in F denoted by <span class="math inline">\(\frac1a\)</span> or <span class="math inline">\(a^{-1}\)</span> such that <span class="math inline">\(a\cdot a^{-1}=1\)</span>.
+</li>
+<li>
+(Distributive) For all <span class="math inline">\(a,b,c\in F\)</span>, we have <span class="math inline">\(a\cdot(b+c)=(a\cdot b)+(a\cdot c)\)</span>.
+</li>
+</ol>
+</div>
+</div>
+<div id="properties-of-identities-and-inverses" class="section level2 hasAnchor" number="4.2">
+<h2><span class="header-section-number">4.2</span> Properties of identities and inverses<a href="ordered-fields-and-a-real-number-system.html#properties-of-identities-and-inverses" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="thmbox">
+<strong>Theorem 1.7.2</strong> (Uniqueness and other properties of identities and inverses)<br>
+If <span class="math inline">\(F\)</span> is a field, then
+<ol class="paren2-alpha">
+<li>
+both the additive and multiplicative identities are unique.
+</li>
+<li>
+both the additive and multiplicative inverses are unique.
+</li>
+<li>
+<span class="math inline">\(\ 0\cdot a=0\)</span> for any <span class="math inline">\(a\in F\)</span>.
+</li>
+<li>
+<span class="math inline">\(\ (-1)\cdot a =-a\)</span> for any <span class="math inline">\(a\in F\)</span>.
+</li>
+<li>
+<span class="math inline">\(\ a\cdot (-b) = (-a)\cdot b=-(a\cdot b)\)</span> for any <span class="math inline">\(a,b\in F\)</span>.
+</li>
+<li>
+<span class="math inline">\(\ -(-a)=a\)</span> for any <span class="math inline">\(a\in F\)</span>.
+</li>
+<li>
+if <span class="math inline">\(a,b\in F\)</span>, with <span class="math inline">\(a\cdot b=0\)</span>, then either <span class="math inline">\(a=0\)</span>, <span class="math inline">\(b=0\)</span>, or both.
+</li>
+</ol>
+</div>
+<p>Parts (a) and (c) are proved in the text. I will show a proof of (d) here.</p>
+<a href="javascript:unhide('thm172d');">Show/hide proof of Theorem 1.7.2(d).</a>
+<div id="thm172d" class="hiddendiv">
+<div class="thmbox">
+<p><em>Proof of Part (d).</em>
+Let <span class="math inline">\(a\in F\)</span>. Then we know that <span class="math inline">\(-a\in F\)</span> by Axiom 5 (additive inverse), <span class="math inline">\((-1)\in F\)</span> by Axioms 6 &amp; 5 (multiplicative identity &amp; additive inverse), and hence <span class="math inline">\((-1)\cdot a\in F\)</span> by Axiom 1 (closure). So we calculate:
+<span class="math display">\[
+\begin{aligned}
+(-1)\cdot a&amp;=(-1)\cdot a+0 &amp;\quad &amp;\text{(Axiom 4, additive identity $0$ exists)}\\
+&amp;=(-1)\cdot a+(a+(-a)) &amp;\quad &amp;\text{(Axiom 5, additive inverse)}\\
+&amp;=((-1)\cdot a+a)+(-a) &amp;\quad &amp;\text{(Axiom 3, associative)}\\
+&amp;=((-1)+1)\cdot a+(-a) &amp;\quad &amp;\text{(Axiom 8, distributive)}\\
+&amp;=((-1)+1)\cdot a+(-a) &amp;\quad &amp;\text{(Axiom 6, mult. identity)}\\
+&amp;=0\cdot a+(-a) &amp;\quad &amp;\text{(Axiom 4, additive identity)}\\
+&amp;=0+(-a) &amp;\quad &amp;\text{(Part (c), this Theorem)}\\
+&amp;=(-a) &amp;\quad &amp;\text{(Axiom 4, additive identity)}\\
+\end{aligned}
+\]</span>
+Thus we conclude that <span class="math inline">\((-1)\cdot a=-a\)</span> for any <span class="math inline">\(a\in F\)</span>. <span style="float:right"><span class="math inline">\(\blacksquare\)</span></span></p>
+</div>
+</div>
+<p>Note that proving Part (b), that the additive inverse is unique is a separate exercise. Only going by what we have shown here, we are just showing that <span class="math inline">\((-1)\cdot a\)</span> is equivalent to the additive inverse of <span class="math inline">\(a\)</span> (<span class="math inline">\((-1)\cdot a=-a\)</span>). There could exist strange number systems (not fields) that only satisfy some of these axioms and properties in which additive inverses might not be unique.</p>
+</div>
+<div id="order-axioms" class="section level2 hasAnchor" number="4.3">
+<h2><span class="header-section-number">4.3</span> Order axioms<a href="ordered-fields-and-a-real-number-system.html#order-axioms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="defbox">
+<strong>Definition 1.7.3</strong> (Order axioms).<br>
+<ol class="axiom" style="counter-reset: axiom-counter 8;">
+<li>
+(Trichotomy) For <span class="math inline">\(a,b\in F\)</span>, exactly one of the following is true: <span class="math inline">\(a=b\)</span>, <span class="math inline">\(a&lt;b\)</span>, or <span class="math inline">\(a&gt;b\)</span>.
+</li>
+<li>
+(Transitive) For <span class="math inline">\(a,b,c\in F\)</span>, if <span class="math inline">\(a&lt;b\)</span> and <span class="math inline">\(b&lt;c\)</span>, then <span class="math inline">\(a&lt;c\)</span>.
+</li>
+<li>
+For <span class="math inline">\(a,b,c\in F\)</span>, if <span class="math inline">\(a&lt;b\)</span>, then <span class="math inline">\(a+c&lt;b+c\)</span>.
+</li>
+<li>
+For <span class="math inline">\(a,b,c\in F\)</span>, if <span class="math inline">\(a&lt;b\)</span> and <span class="math inline">\(c&gt;0\)</span>, then <span class="math inline">\(ac&lt;bc\)</span>.
+</li>
+</ol>
+</div>
+<div class="thmbox">
+<strong>Theorem 1.7.4</strong> (Some implications for an ordered field).
+<ol class="paren2-alpha">
+<li>
+If <span class="math inline">\(a,b\in F\)</span>, then <span class="math inline">\(a&lt;b\)</span> if and only if <span class="math inline">\(-a&gt;-b\)</span>.
+</li>
+<li>
+If <span class="math inline">\(a,b,c\in F\)</span>, <span class="math inline">\(a&lt;b\)</span> and <span class="math inline">\(c&lt;0\)</span>, then <span class="math inline">\(ac&gt;bc\)</span>.
+</li>
+<li>
+If <span class="math inline">\(a\in F\)</span> and <span class="math inline">\(a\neq0\)</span>, then <span class="math inline">\(a^2&gt;0\)</span>.
+</li>
+<li>
+Suppose that <span class="math inline">\(a\in F\)</span>. If <span class="math inline">\(a&gt;0\)</span>, then <span class="math inline">\(\frac1a&gt;0\)</span>, and if <span class="math inline">\(a&lt;0\)</span>, then <span class="math inline">\(\frac1a&lt;0\)</span>.
+</li>
+</ol>
+</div>
+<p>Part (a) is proved in the text. I will prove (c) and (d) here.</p>
+<p><a href="javascript:unhide('thm174c');">Show/hide proof of Theorem 1.7.4(c).</a></p>
+<div id="thm174c" class="hiddendiv">
+<div class="thmbox">
+<p><em>Proof of Part (c).</em>
+Suppose that <span class="math inline">\(a\in F\)</span> and <span class="math inline">\(a\neq0\)</span>. If <span class="math inline">\(a&gt;0\)</span> then by Axiom 12 and Theorem 1.7.2(c) we have that <span class="math inline">\(a\cdot a&gt;0\cdot a=0\)</span>. Thus <span class="math inline">\(a^2&gt;0\)</span>.</p>
+<p>If <span class="math inline">\(a&lt;0\)</span> then <span class="math inline">\(0=a+(-a)&lt;0+(-a)=(-a)\)</span> (Axioms 5 and 11). Thus <span class="math inline">\((-a)&gt;0\)</span>. Applying the case already proven, we get <span class="math inline">\((-a)^2&gt;0\)</span>. Now <span class="math inline">\((-a)^2=(-1)^2\cdot a^2\)</span> (Theorem 1.7.2(d) and Axiom 2). Furthermore, <span class="math inline">\((-1)^2=-(-1)=1\)</span> by Theorem 1.7.2(d) and (f). Thus <span class="math inline">\((-a)^2=(-1)^2\cdot a^2=1\cdot a^2=a^2\)</span>, and we conclude that <span class="math inline">\(a^2&gt;0\)</span>. <span style="float:right"><span class="math inline">\(\blacksquare\)</span></span></p>
+</div>
+</div>
+<p><br></p>
+<p>Note that this implies <span class="math inline">\(1&gt;0\)</span> since <span class="math inline">\(1=1\cdot 1=1^2\)</span> and <span class="math inline">\(1\neq0\)</span> (Axiom 6).</p>
+<p><a href="javascript:unhide('thm174d');">Show/hide proof of Theorem 1.7.4(d).</a></p>
+<div id="thm174d" class="hiddendiv">
+<div class="thmbox">
+<p><em>Proof of Part (d).</em>
+Suppose that <span class="math inline">\(a\in F\)</span> and <span class="math inline">\(a\neq0\)</span>. We have that <span class="math inline">\(a\cdot\frac1a=1\)</span> (Axiom 7). We also use the fact that <span class="math inline">\(1&gt;0\)</span> which you are to prove in homework.</p>
+<p>Let <span class="math inline">\(a&gt;0\)</span> and assume <span class="math inline">\(\frac1a&lt;0\)</span>. Now use Axiom 12 and multiply <span class="math inline">\(\frac1a&lt;0\)</span> across by <span class="math inline">\(a\)</span> to get <span class="math inline">\(1&lt;0\)</span>, a contradiction. Now assume <span class="math inline">\(\frac1a=0\)</span>, then <span class="math inline">\(1=a\cdot\frac1a=a\cdot0=0\)</span> another contradiction. Here we used Axiom 7 and Theorem 1.7.2(b). Thus by trichotomy, <span class="math inline">\(\frac1a&gt;0\)</span> is the only possibility.</p>
+<p>If <span class="math inline">\(a&lt;0\)</span>, then we perform the above computation with <span class="math inline">\((-a)&gt;0\)</span> (that follows from Theorem 1.7.4(a)) to get <span class="math inline">\(\frac1{(-a)}&gt;0\)</span> then add <span class="math inline">\(\frac1a\)</span> to get <span class="math inline">\(\frac1{a}+\frac1{(-a)}&gt;\frac1a+0\)</span>. Now we must show that <span class="math inline">\(\frac1a\)</span> and <span class="math inline">\(\frac 1{(-a)}\)</span> are additive inverses.</p>
+<p>We have that
+<span class="math display">\[
+\begin{aligned}
+(-a)\cdot\left(\frac1{a}+\frac1{(-a)}\right)
+&amp;=(-a)\cdot\frac1{a}+(-a)\cdot\frac1{(-a)} &amp;\quad &amp;\text{(distributive)}\\
+&amp;=(-1)\cdot a\cdot \frac1{a}+(-a)\cdot\frac1{(-a)} &amp;\quad &amp;\text{(Thm 1.7.2(d))}\\
+&amp;=(-1)\cdot 1+1 &amp;\quad &amp;\text{(Mult. inverse, Axiom 7)}\\
+&amp;=(-1)+1 &amp;\quad &amp;\text{(Mult. identity, Axiom 6)}\\
+&amp;=0 &amp;\quad &amp;\text{(Additive inverse, Axiom 5)}\\
+\end{aligned}
+\]</span>
+Now by Theorem 1.7.2(g) we have that <span class="math inline">\((-a)=0\)</span> or <span class="math inline">\(\left(\frac1{a}+\frac1{(-a)}\right)=0\)</span>. By our initial assumption of <span class="math inline">\(a\neq0\)</span>, we have that <span class="math inline">\(-a\neq0\)</span>. Thus <span class="math inline">\(\left(\frac1{a}+\frac1{(-a)}\right)=0\)</span>. This implies that <span class="math inline">\(\frac1{(-a)}\)</span> is the additive inverse of <span class="math inline">\(\frac1{a}\)</span>.</p>
+<p>So we have that <span class="math inline">\(\frac1{(-a)}=-\frac1{a}=(-1)\cdot\frac1{a}&gt;0\)</span> (using Theorem 1.7.2(d)) and we use Theorem 1.7.4(b) to multiply across by <span class="math inline">\((-1)\)</span> and get <span class="math inline">\((-1)^2\cdot\frac1{a}&lt;(-1)\cdot 0\)</span>. Finally we have <span class="math inline">\(\frac1{a}&lt;0\)</span>. <span style="float:right"><span class="math inline">\(\blacksquare\)</span></span></p>
+</div>
+</div>
+<p><br></p>
+<!-- BY uniqueness of multiplicative inverses (Theorem 1.7.2(b)), we have that $\frac1{(-a)}=\frac1{(-1)\cdot a}=\frac1{(-1)}\cdot\frac1{a}=(-1)\frac1a$ -->
+</div>
+<div id="rational-numbers-are-an-ordered-field" class="section level2 hasAnchor" number="4.4">
+<h2><span class="header-section-number">4.4</span> Rational numbers are an ordered field<a href="ordered-fields-and-a-real-number-system.html#rational-numbers-are-an-ordered-field" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Note about the integers.</strong>
+The integers do not form a field! They almost do though, but just don’t have multiplicative inverses (except that the integer <span class="math inline">\(1\)</span> is its own multiplicative inverse – it is also the multiplicative identity).</p>
+<p>We now assume that the integers satisfy all field axioms except Axiom 7 (since there are no multiplicative inverses in <span class="math inline">\(\mathbb Z\)</span> for anything besides the multiplicative identity <span class="math inline">\(1\)</span>). The integers also satisfy all parts of Theorem 1.7.2 except part of (b) since there are no multiplicative inverses (again except for <span class="math inline">\(1\)</span>). Finally, we assume that the integers satisfy all order axioms and Theorem 1.7.4 (except (d)). Proving these facts for integers is beyond the scope of this course.</p>
+<p><strong>Defining the rational numbers.</strong>
+We define the set of rational numbers as <span class="math inline">\(\mathbb Q=\{\frac ab\mid a,b\in\mathbb Z, b\neq0\}\)</span>. For any <span class="math inline">\(a\in\mathbb Z\)</span> we define the equivalence between <span class="math inline">\(\mathbb Z\)</span> and <span class="math inline">\(\mathbb Q\)</span> by <span class="math inline">\(a=\frac a1\in \mathbb Q\)</span>. We assume that rational numbers of the form <span class="math inline">\(\frac a1\)</span> have all properties that the integers do, i.e. they satisfy Axioms 1-6, 8, and 9-12 and hence Theorem 1.7.2 (except some of Part (b) regarding multiplicative inverses) and Theorem 1.7.4 (except for Part (d)).</p>
+<p>We define addition and multiplication by
+<span class="math display">\[\frac ab\cdot \frac cd \overset{def}{=} \frac{ac}{bd}\]</span>
+and
+<span class="math display">\[\frac ab+ \frac cd \overset{def}{=} \frac{ad+ bc}{bd}\]</span>
+The ordering on the rational numbers is defined below when discussing how the order axioms apply to the rational numbers.</p>
+<p>For rational numbers, we define equivalence relation:
+<span class="math display">\[\frac ab=\frac cd \quad \text{ if and only if } \quad ad=bc\]</span>
+Then we define the ordering on the rational numbers by:
+<span class="math display">\[\frac ab&lt;\frac cd \quad \text{ if and only if } \quad ad&lt;bc\]</span>
+<span class="math display">\[\frac ab&gt;\frac cd \quad \text{ if and only if } \quad ad&gt;bc\]</span>
+Now we have the necessary ingredients to derive all properties of rational numbers that we are accustomed to.</p>
+<div class="thmbox">
+<p><strong>Theorem 1.7.5</strong>
+The set of rational numbers <span class="math inline">\(\mathbb Q\)</span> is an ordered field.</p>
+<p><a href="javascript:unhide('rationalfield');">Show/hide proof.</a></p>
+<div id="rationalfield" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+<p><em>Proof.</em>
+We have to show that the set of rational numbers satisfies all 12 axioms, the field axioms of Definition 1.7.1 and the order axioms of Definition 1.7.3.</p>
+<p>Let <span class="math inline">\(\frac ab, \frac cd \in \mathbb Q\)</span>. Recall that this means that <span class="math inline">\(a,b,c,d\in\mathbb Z\)</span> with <span class="math inline">\(b,d\neq0\)</span>.</p>
+<p><strong>Axiom 1.</strong> (Closure under addition and multiplication)
+Using the axioms for integers <span class="math inline">\(a,b,c,d\in\mathbb Z\)</span> with <span class="math inline">\(b,d\neq0\)</span> we get:</p>
+<div class="inner">
+<p><strong>Multiplication.</strong>
+For <span class="math inline">\(a,b,c,d\in\mathbb Z\)</span>, <span class="math inline">\(ab,cd\in\mathbb Z\)</span> by the assumption that <span class="math inline">\(\mathbb Z\)</span> is closed. Thus by how we have defined multiplication for rational numbers, the set <span class="math inline">\(\mathbb Q\)</span> is also closed under multiplication.
+<!-- $\frac ab\cdot \frac cd=a\cdot \frac 1b\cdot c\cdot \frac 1d=ac\cdot \frac1{bd}=\frac{ac}{bd}$ --></p>
+<p><strong>Addition.</strong>
+For <span class="math inline">\(a,b,c,d\in\mathbb Z\)</span>, <span class="math inline">\(ad+bc,bd\in\mathbb Z\)</span> by the assumption that <span class="math inline">\(\mathbb Z\)</span> is closed. Thus by how we have defined addition for rational numbers, the set <span class="math inline">\(\mathbb Q\)</span> is also closed under addition.
+<!-- $$ -->
+<!-- \begin{aligned} -->
+<!-- \frac ab+ \frac cd -->
+<!-- &=a\cdot\frac 1b+ c\cdot\frac 1d\\ -->
+<!-- &=\frac1{bd}\cdot bd \cdot \left(a\cdot\frac 1b+ c\cdot\frac 1d\right)\\ -->
+<!-- &=\frac1{bd}\cdot  \left(b\cdot d \cdot a\cdot\frac 1b+ b\cdot d \cdot c\cdot\frac 1d\right)\\ -->
+<!-- &=\frac1{bd}\cdot  \left(d \cdot a+ b\cdot c\right)\\ -->
+<!-- &=\frac{ad+ bc}{bd}\\ -->
+<!-- \end{aligned} -->
+<!-- $$ --></p>
+<p>Both <span class="math inline">\(\frac{ac}{bd}\)</span> and <span class="math inline">\(\frac{ad+bc}{bd}\)</span> are in <span class="math inline">\(\mathbb Q\)</span> since we assume that sums and products of integers are integers. Hence <span class="math inline">\(\mathbb Q\)</span> is closed.</p>
+</div>
+<p><strong>Axiom 2.</strong> (Commutativity of addition and multiplication)</p>
+<div class="inner">
+<p>This follows from commutativity of addition and multiplication for integers.</p>
+<p><span class="math inline">\(\frac ab \cdot\frac cd=\frac{ac}{bd}=\frac{ca}{db}=\frac cd \cdot\frac ab\)</span></p>
+<p><span class="math inline">\(\frac ab+ \frac cd=\frac{ad+bc}{bd}=\frac{cb+da}{db}=\frac cd+ \frac ab\)</span></p>
+</div>
+<p><strong>Axiom 3.</strong> (Associativity)</p>
+<div class="inner">
+<p><strong>Multiplication</strong>
+<span class="math display">\[
+\left(\frac ab\cdot \frac cd\right) \cdot \frac ef=
+\left(\frac {ac}{bd}\right) \cdot \frac ef=
+\frac{ace}{bdf}
+=\frac {a}{b} \cdot \left(\frac {ce}{df}\right)
+=\frac ab\cdot \left(\frac cd \cdot \frac ef\right)
+\]</span></p>
+<p><strong>Addition</strong>
+<span class="math display">\[
+\begin{aligned}
+\left(\frac ab+ \frac cd\right) + \frac ef
+=\left(\frac {ad+bc}{bd}\right) + \frac ef\\
+=\frac{(ad+bc)f+e(bd)}{(bd)f}\\
+=\frac{adf+bcf+ebd}{bdf}\\
+=\frac{a(df)+b(cf+ed)}{b(df)}\\
+=\frac {a}{b} + \left(\frac {cf+ed}{df}\right)\\
+=\frac ab +\left(\frac cd + \frac ef\right)
+\end{aligned}
+\]</span></p>
+</div>
+<strong>Axiom 4.</strong> (Additive identity)
+<div class="inner">
+<p>Note that <span class="math inline">\(0\in\mathbb Z\)</span> and thus <span class="math inline">\(\frac01\in\mathbb Q\)</span>. We just need to show that <span class="math inline">\(\frac01\)</span> acts as an additive identity. For any <span class="math inline">\(\frac ab\in\mathbb Q\)</span> we get that <span class="math inline">\(\frac01+\frac ab=\frac{0\cdot b+1\cdot a}{1\cdot b}=\frac ab\)</span>. Thus <span class="math inline">\(\frac01\)</span> is an additive identity in <span class="math inline">\(\mathbb Q\)</span>. We also have <span class="math inline">\(\frac0b=\frac01\)</span> for any nonzero <span class="math inline">\(b\in\mathbb Z\)</span> by our defined equivalence relation among rationals. Therefor we have that <span class="math inline">\(\frac0b=0\)</span> (the additive identity) for all nonzero <span class="math inline">\(b\)</span>.</p>
+</div>
+<strong>Axiom 5.</strong> (Additive inverse)
+<div class="inner">
+<p>For <span class="math inline">\(\frac ab\in\mathbb Q\)</span> we also have that <span class="math inline">\(\frac{(-a)}b , \frac{a}{(-b)} \in\mathbb Q\)</span>. We first show that <span class="math inline">\(\frac{(-a)}{b}=\frac{a}{(-b)}\)</span>.
+<span class="math display">\[
+\begin{aligned}
+\frac{(-a)}{b}&amp;=\frac{(-a)+0}{b}\\
+&amp;=\frac{(-1)\cdot a+0\cdot(-1)}{(-b)\cdot (-1)}\\
+&amp;=\frac{a}{(-b)}+\frac{0}{(-b)}\\
+&amp;=\frac{a}{(-b)}
+\end{aligned}
+\]</span>
+We have that <span class="math inline">\(\frac ab+\frac{(-a)}b=\frac{ab+(-a)\cdot b}{b^2}=\frac{(a+(-a))\cdot b}{b^2}=\frac{0\cdot b}{b^2}=\frac{0}{b^2}=0\)</span>. Thus additive inverses exist in <span class="math inline">\(\mathbb Q\)</span>.
+<!-- By a calculation nearly identical to the proof of Theorem 1.7.4(d) that $\frac1{(-a)}$ is the additive inverse of $\frac1a$. Show that $\frac1b\cdot b\cdot \left(\frac ab+\frac{(-a)}{b}\right)=0$ and that since $\frac1b\neq0$ we have that $\frac{(-a)}{b}$ is an additive inverse of $\frac ab$. --></p>
+</div>
+<strong>Axiom 6.</strong> (Multiplicative identity)
+<div class="inner">
+<p>We have that <span class="math inline">\(1\in\mathbb Z\)</span>, thus <span class="math inline">\(\frac11\in\mathbb Q\)</span> and <span class="math inline">\(\frac11\cdot\frac ab=\frac ab\)</span>. Thus <span class="math inline">\(\frac11\)</span> is a multiplicative identity. Note that <span class="math inline">\(\frac11=1\)</span> simply by convention we denote the multiplicative identity by <span class="math inline">\(1\)</span>. Thus <span class="math inline">\(1\in\mathbb Q\)</span>. It also holds by the definition of our equivalence relation for rationals that <span class="math inline">\(\frac aa=\frac11\)</span> for all nonzero <span class="math inline">\(a\in\mathbb Z\)</span>.</p>
+</div>
+<strong>Axiom 7.</strong> (Multiplicative inverse)
+<div class="inner">
+<p>For <span class="math inline">\(\frac ab\in\mathbb Q\)</span> with <span class="math inline">\(a,b\neq0\)</span> we have that <span class="math inline">\(a,b\in\mathbb Z\)</span> and thus <span class="math inline">\(\frac ba\in\mathbb Q\)</span>. Furthermore, <span class="math inline">\(\frac ab\cdot \frac ba= \frac{ab}{ba}= \frac{ab}{ab}=\frac{1}{1}\)</span>. We just showed in the previous axiom that <span class="math inline">\(\frac11\)</span> is a multiplicative identity. Thus multiplicative inverses exist in <span class="math inline">\(\mathbb Q\)</span>.</p>
+</div>
+<strong>Axiom 8.</strong> (Distributive)
+<div class="inner">
+<p><span class="math display">\[
+\begin{aligned}
+\frac ab \cdot \left(\frac cd + \frac ef\right)
+&amp;= \frac ab \cdot \left(\frac {cf+ed}{df}\right)\\
+&amp;= \frac {acf+aed}{bdf}\\
+&amp;= \frac {acf}{bdf}+\frac {aed}{bdf}\\
+&amp;= \frac {ac}{bd}+\frac {ae}{bf}\\
+&amp;= \frac ab\cdot\frac cd+\frac ab\cdot\frac ef\\
+\end{aligned}
+\]</span></p>
+</div>
+<strong>Axiom 9.</strong> (Trichotomy)
+<div class="inner">
+<p>By the ordering and equivalence relations defined above and that for the integers we have trichotomy: <span class="math inline">\(ad=bc\)</span>, <span class="math inline">\(ad&lt;bc\)</span>, or <span class="math inline">\(ad&gt;bc\)</span>.
+Since only one of the three possibilities can hold for the integers (by assumption), then the same is true for rational numbers.</p>
+</div>
+<strong>Axiom 10.</strong> (Transitive)
+<div class="inner">
+<p>If <span class="math inline">\(\frac ab&lt;\frac cd\)</span> and <span class="math inline">\(\frac cd&lt;\frac ef\)</span>, then <span class="math inline">\(ad&lt;bc\)</span> and <span class="math inline">\(cf&lt;de\)</span> by the definition of “<span class="math inline">\(&lt;\)</span>” for rational numbers above in Axiom 9. Assume that <span class="math inline">\(b,d,f&gt;0\)</span> (we can do this since we are free to put the minus sign in the numerator or denominator wtihout changing the fraction). Now we multiply one by <span class="math inline">\(f\)</span> and the other by <span class="math inline">\(b\)</span> to get <span class="math inline">\(adf&lt;bcf\)</span> and <span class="math inline">\(bcf&lt;bde\)</span>. Since these are all integers, we apply transitivity of integers to get <span class="math inline">\((ad)f&lt;(bd)e\)</span>. Then apply the definition of the ordering in the previous axiom to get <span class="math inline">\(\frac {ad}{bd}&lt;\frac ef\)</span>. Noting that <span class="math inline">\(\frac {ad}{bd}=\frac {a}{b}\cdot \frac {d}{d}=\frac {a}{b}\)</span> gives the result.</p>
+</div>
+<strong>Axiom 11.</strong> (Addition preserves order)
+<div class="inner">
+<p>Suppose <span class="math inline">\(\frac ab &lt;\frac cd\)</span> and <span class="math inline">\(\frac ef\in\mathbb Q\)</span>. Then we have that <span class="math inline">\(ad&lt;bc\)</span>, <span class="math inline">\(f^2&gt;0\)</span>, and <span class="math inline">\(bedf\)</span> is an integer. This implies that <span class="math inline">\(adf^2&lt;bcf^2\)</span>. Hence <span class="math inline">\(adf^2+bedf&lt;bcf^2+bedf=df(af+be)&lt;bf(cf+ed)\)</span>. This gives us that <span class="math inline">\(\frac{af+be}{bf}&lt;\frac{cf+ed}{df}\)</span> and thus <span class="math inline">\(\frac ab+\frac ef&lt;\frac cd+\frac ef\)</span>.</p>
+</div>
+<strong>Axiom 12.</strong> (Multiplication by a positive preserves order)
+<div class="inner">
+<p>Suppose <span class="math inline">\(\frac ab &lt; \frac cd\)</span> and <span class="math inline">\(\frac ef&gt;0\)</span>. Then <span class="math inline">\(ad&lt;bc\)</span> and <span class="math inline">\(ef&gt;0\)</span>. This implies <span class="math inline">\(adef&lt;bcef\)</span>. In other words, rearranging, <span class="math inline">\((ae)(df)&lt;(bf)(ce)\)</span>. This implies that <span class="math inline">\(\frac{ae}{bf}&lt;\frac{ce}{df}\)</span> and hence <span class="math inline">\(\frac ab \cdot \frac ef &lt; \frac cd \cdot \frac ef\)</span></p>
+</div>
+<p>Thus we have shown that <span class="math inline">\(\mathbb Q\)</span> satisfies all field and order axioms. <span style="float:right"><span class="math inline">\(\blacksquare\)</span></span></p>
+</div>
+</div>
+</div>
+<div id="completeness" class="section level2 hasAnchor" number="4.5">
+<h2><span class="header-section-number">4.5</span> Completeness<a href="ordered-fields-and-a-real-number-system.html#completeness" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Next we explore a property that rational numbers do not satisfy, but it is extremely important to real analysis.</p>
+<p>Recall that a set <span class="math inline">\(A\subset \mathbb R\)</span> is bounded from above if there is a real number <span class="math inline">\(b\)</span> such that for all <span class="math inline">\(x\in A\)</span> we have that <span class="math inline">\(x\leq b\)</span>. We say that <span class="math inline">\(s\in\mathbb R\)</span> is a <em>least upper bound</em> of <span class="math inline">\(A\)</span>, also called a <em>supremum</em> of <span class="math inline">\(A\)</span>, if <span class="math inline">\(s\leq b\)</span> for all upper bounds <span class="math inline">\(b\)</span>.</p>
+<p>See Definition 1.2.14 for upper bounds and suprema of functions. This definition extends to sets by considering that a function being bounded meand that its range (a set of real numbers) is bounded.</p>
+<div class="defbox">
+<strong>Definition 1.7.6</strong> (Completeness axiom)<br>
+Suppose <span class="math inline">\(F\)</span> is an ordered field. <span class="math inline">\(F\)</span> is a <em>complete ordered field</em> if <span class="math inline">\(F\)</span> satisfies the following axiom:<br>
+<div class="inner">
+(A13)
+<div class="inner2">
+<p>Every nonempty subset <span class="math inline">\(S\)</span> of <span class="math inline">\(F\)</span> that has an upper bound has the least upper bound, which is an element of <span class="math inline">\(F\)</span>.</p>
+</div>
+</div>
+</div>
+<p><strong>Creation of the real numbers.</strong>
+Now we define <span class="math inline">\(\mathbb R\)</span> so that <span class="math inline">\(\mathbb Q\subset\mathbb R\)</span> and assume that all real numbers satisfy the field and order axioms.</p>
+<p>The next theorem is referred to as <em>the approximation property of suprema</em>. It shows that the supremum of a set of real numbers can be approximated arbitrarily well by an element of the set.</p>
+<div class="thmbox">
+<p><strong>Theorem 1.7.7</strong> (Approximation property of suprema)
+Suppose that <span class="math inline">\(S\)</span> is a nonempty subset of <span class="math inline">\(\mathbb R\)</span> and <span class="math inline">\(k\)</span> is an upper bound of <span class="math inline">\(S\)</span>. Then <span class="math inline">\(k\)</span> is the least upper bound of <span class="math inline">\(S\)</span> if and only if for each <span class="math inline">\(\epsilon&gt;0\)</span> there exists <span class="math inline">\(s\in S\)</span> such that <span class="math inline">\(k-\epsilon&lt;s\)</span>.</p>
+<p><a href="javascript:unhide('thm177');">Show/hide proof.</a></p>
+<div id="thm177" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+<p><em>Proof.</em>
+Let <span class="math inline">\(S\)</span> be a nonempty subset of <span class="math inline">\(\mathbb R\)</span> and <span class="math inline">\(k\)</span> be an upper bound of <span class="math inline">\(S\)</span>.</p>
+<div style="padding-left: 54px;">
+<ul>
+<li style="list-style: &#39;(⇒)&#39;; padding-left: 12px;">
+<!--($\Rightarrow$)-->
+Suppose that <span class="math inline">\(k=\sup S\)</span> (the supremum a.k.a. least upper bound). Let <span class="math inline">\(\epsilon&gt;0\)</span> be any positive real number. Then <span class="math inline">\(k-\epsilon&lt;k\)</span>, and <span class="math inline">\(k-\epsilon\)</span> is not an upper bound of <span class="math inline">\(S\)</span> since <span class="math inline">\(k\)</span> is the smallest upper bound. This implies that there is an element of <span class="math inline">\(S\)</span> that is above <span class="math inline">\(k-\epsilon\)</span>, i.e. that there is an <span class="math inline">\(s\in S\)</span> such that <span class="math inline">\(k-\epsilon&lt;s\leq k\)</span>.
+</li>
+<li style="list-style: &#39;(⇐)&#39;; padding-left: 12px;">
+<!--($\Leftarrow$)-->
+Suppose there exists <span class="math inline">\(s\in S\)</span> such that <span class="math inline">\(k-\epsilon&lt;s\)</span> for any <span class="math inline">\(\epsilon&gt;0\)</span>. Also let <span class="math inline">\(M\)</span> be a real number such that <span class="math inline">\(M&lt;k\)</span> and <span class="math inline">\(M\)</span> is an upper bound of <span class="math inline">\(S\)</span>. We want to show that no such upper bound can actually exist since we want to prove that <span class="math inline">\(k=\sup S\)</span>. Consider <span class="math inline">\(\epsilon=k-M&gt;0\)</span> for a value of <span class="math inline">\(\epsilon\)</span>. By assumption, we know there exists <span class="math inline">\(s\in S\)</span> such that <span class="math inline">\(k-\epsilon&lt;s\)</span> (for our chosen <span class="math inline">\(\epsilon\)</span>). This implies that <span class="math inline">\(k-\epsilon=k-(k-M)=M&lt;s\)</span>, but <span class="math inline">\(M\)</span> is supposed to be an upper bound of <span class="math inline">\(S\)</span> which requires <span class="math inline">\(s\leq M\)</span>. Thus we have a contradiction. We conclude that <span class="math inline">\(k\)</span> is in fact the least upper bound of <span class="math inline">\(S\)</span>.<span style="float:right"><span class="math inline">\(\blacksquare\)</span></span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="exbox">
+<strong><em>Example:</em></strong>
+<div class="inner">
+<p>Consider the set <span class="math inline">\(S=\{x\in \mathbb R\mid x&lt;2 \}\subset\mathbb R\)</span>.</p>
+<p>Intuitively <span class="math inline">\(\sup S=2\)</span>.</p>
+<p>Let <span class="math inline">\(\epsilon=\frac1{100}\)</span>. Then we know that <span class="math inline">\(2-\frac1{100}=\frac{199}{100}&lt;2\)</span> and thus we can just go slightly above that by adjusting the top and bottom of the fraction: <span class="math inline">\(\frac{199}{100}=\frac{1990}{1000}&lt;\frac{1995}{1000}&lt;2\)</span>. We can do this endlessly to find many elements of <span class="math inline">\(S\)</span>, and can do it for any <span class="math inline">\(\epsilon\)</span>. <span style="float:right"><span class="math inline">\(\square\)</span></span></p>
+</div>
+</div>
+<div class="exbox">
+<strong><em>Example:</em></strong>
+<div class="inner">
+<p>Consider the set <span class="math inline">\(S=\{x\in \mathbb Q\mid x&lt;2 \}\subset\mathbb R\)</span>.</p>
+<p>Clearly <span class="math inline">\(2\)</span> is an upper bound on this set since every <span class="math inline">\(q\in S\)</span> satisfies <span class="math inline">\(q&lt;2\)</span>.
+<!-- If $b$ is an upper bound on $S$, then $b\geq2$.  -->
+If <span class="math inline">\(b\)</span> is an upper bound on <span class="math inline">\(S\)</span> that satisfies <span class="math inline">\(b&lt;2\)</span>, then let <span class="math inline">\(\epsilon=2-b&gt;0\)</span> and by Thm 1.7.7 there is another rational number <span class="math inline">\(q\in S\)</span> such that <span class="math inline">\(2-\epsilon&lt;q\)</span>. Pluggin in what we have set <span class="math inline">\(\epsilon\)</span> as gives <span class="math inline">\(2-(2-b)=b&lt;q\)</span>. This is a contradiction since <span class="math inline">\(q\in S\)</span> and <span class="math inline">\(b\)</span> is supposed to be an upper bound on <span class="math inline">\(S\)</span>. Hence we conclude that <span class="math inline">\(b\geq2\)</span> is the only possibility for any upper bound <span class="math inline">\(b\)</span>. Thus <span class="math inline">\(2=\sup S\)</span> is the least upper bound. <span style="float:right"><span class="math inline">\(\square\)</span></span></p>
+</div>
+</div>
+<p>Note that <span class="math inline">\(\mathbb Q\)</span> is <u>NOT</u> complete!</p>
+<div class="exbox">
+<strong><em>Counterexample:</em></strong>
+<div class="inner">
+<p>Consider the set <span class="math inline">\(S=\{x\in \mathbb Q\mid x&lt;\pi \}\subset\mathbb R\)</span>.</p>
+<p>This is definitely a nonempty set, since <span class="math inline">\(3&lt;\pi\)</span>. Recall that <span class="math inline">\(\pi=3.1415\ldots\)</span> and assume that by definition it is not rational.</p>
+<p>Recall that we are assuming that the set of real numbers satisfies all 13 axioms. Repeat the exact argument as in the previous example but replacing <span class="math inline">\(2\)</span> by <span class="math inline">\(\pi\)</span>. We conclude that <span class="math inline">\(\pi\)</span> is the supremum of this set, but <span class="math inline">\(\pi\)</span> is not rational (by assumption for us). We have just demonstrated a subset of <span class="math inline">\(\mathbb Q\)</span> that does not have a supremum in <span class="math inline">\(\mathbb Q\)</span>. Therefore <span class="math inline">\(\mathbb Q\)</span> does not satisfy the completeness axiom! Note that this is not a proof, but just an illustration of why we need irrationals. <span style="float:right"><span class="math inline">\(\square\)</span></span></p>
+</div>
+</div>
+<p>The intuitive idea here is that the real numbers form a <em>continuum</em>, an unbroken line, like a classical line of geometry extending to infinity in both directions. The rational numbers are all part of the continuum but do not form a continuum on their own: <span class="math inline">\(\mathbb Q\)</span> is “holey.”</p>
+<div class="thmbox">
+<p><strong>Theorem 1.7.8</strong>
+(Archimedean Order Property of <span class="math inline">\(\mathbb R\)</span>). Let <span class="math inline">\(x\)</span> be any real number. Then there exists a positive integer <span class="math inline">\(n^*\)</span> greater than <span class="math inline">\(x\)</span>.</p>
+<p><a href="javascript:unhide('thm178');">Show/hide proof of Theorem 1.7.8.</a></p>
+<div id="thm178" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+<p><em>Proof By Contradiction.</em>
+Suppose <span class="math inline">\(x\)</span> is an upper bound for <span class="math inline">\(\mathbb N\)</span>. Now <span class="math inline">\(\mathbb N\)</span> is a nonempty subset of <span class="math inline">\(\mathbb R\)</span> and <span class="math inline">\(\mathbb R\)</span> satisfies the Completeness Axiom (Axiom 13). Thus, by the Completeness Axiom, there exists an <span class="math inline">\(m\in\mathbb R\)</span> such that <span class="math inline">\(m=\sup \mathbb N\)</span>. Then <span class="math inline">\(m-1\)</span> is not an upper bound of <span class="math inline">\(\mathbb N\)</span>.
+Let <span class="math inline">\(\epsilon=1\)</span>. Then by Theorem 1.7.7, there exists <span class="math inline">\(n_1\in\mathbb N\)</span> such that <span class="math inline">\(m-\epsilon=m-1&lt;n_1\)</span> Now, <span class="math inline">\(m-1&lt;n_1 \Rightarrow m&lt;n_1+1\)</span> and <span class="math inline">\(n_1+1\in\mathbb N\)</span>. This contradicts that <span class="math inline">\(m\)</span> is the least upper bound of <span class="math inline">\(\mathbb N\)</span>.
+We conclude that the set of natural numbers does not have anny upper bounds. In other words, that every real number <span class="math inline">\(x\)</span> has a natural number <span class="math inline">\(N^*\)</span> above it <span class="math inline">\(x&lt;n^*\)</span>.
+<!-- </div> -->
+<span style="float:right"><span class="math inline">\(\blacksquare\)</span></span></p>
+</div>
+</div>
+<div class="exbox">
+<strong><em>Example:</em></strong>
+<div class="inner">
+<p>Let <span class="math inline">\(x=\pi\)</span>, then <span class="math inline">\(n^*=4\)</span> works.<br>
+If <span class="math inline">\(x=78.3\)</span>, then <span class="math inline">\(n^*=100\)</span> works.<br>
+There are in fact many choices for <span class="math inline">\(n^*\)</span> in any case, in fact, always infinitely many choices!
+<span style="float:right"><span class="math inline">\(\square\)</span></span></p>
+</div>
+</div>
+<div class="thmbox">
+<strong>Theorem 1.7.9</strong>
+The following are equivalent statements:
+<ol class="paren2-alpha">
+<li>
+The Archimedean order property of <span class="math inline">\(\mathbb R\)</span>.
+</li>
+<li>
+For any <span class="math inline">\(x,y\in\mathbb R^+\)</span>, there exists <span class="math inline">\(n\in\mathbb N\)</span> such that <span class="math inline">\(y&lt;nx\)</span>.
+</li>
+<li>
+For any <span class="math inline">\(x\in\mathbb R^+\)</span>, there exists <span class="math inline">\(n\in\mathbb N\)</span> such that <span class="math inline">\(\frac1n&lt;x\)</span>.
+</li>
+<li>
+The set <span class="math inline">\(\mathbb N\)</span> is unbounded.
+</li>
+<li>
+For any <span class="math inline">\(x\in\mathbb R^+\)</span>, there exists <span class="math inline">\(n\in\mathbb N\)</span> such that <span class="math inline">\(n-1\leq x&lt; n\)</span>.
+</li>
+</ol>
+<p><a href="javascript:unhide('thm179');">Show/hide proof.</a></p>
+<div id="thm179" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+<em>Proof.</em>
+<div style="padding-left: 54px;">
+<ul>
+<li style="list-style: &#39;(a ⇒ b) &#39;; padding-left: 12px;">
+For any positive real numbers <span class="math inline">\(x,y\)</span> we have that <span class="math inline">\(\frac yx\)</span> is a positive real number, therefore by the Archimedean property, there is a natural number <span class="math inline">\(n\)</span> such that <span class="math inline">\(\frac yx&lt;n\)</span> which implies that <span class="math inline">\(y&lt;nx\)</span>.
+</li>
+<li style="list-style: &#39;(b ⇒ c) &#39;; padding-left: 12px;">
+Let <span class="math inline">\(x\in\mathbb R^+\)</span>, and we have that <span class="math inline">\(1\in\mathbb R^+\)</span>. Now applying part (b) we have that there exists <span class="math inline">\(n\in\mathbb N\)</span> such that <span class="math inline">\(1&lt;nx\)</span>. Multiply by <span class="math inline">\(n^{-1}\)</span> to get <span class="math inline">\(\frac1n&lt;x\)</span>.
+<!-- For $x\in\mathbb R^+$, by the Archimedean property we know that there exists $n\in\mathbb N$ such that $\frac1x<n$. Rearranging gives $\frac1n<x$. -->
+</li>
+<li style="list-style: &#39;(c ⇒ d) &#39;; padding-left: 12px;">
+If <span class="math inline">\(\mathbb N\)</span> is bounded, then it is bounded by some real number. Suppose there exists <span class="math inline">\(x\in\mathbb R\)</span> such that <span class="math inline">\(n\leq x\)</span> for all <span class="math inline">\(n\in\mathbb N\)</span>. Since <span class="math inline">\(n&gt;0\)</span> we know <span class="math inline">\(x&gt;0\)</span> and thus <span class="math inline">\(\frac1x&gt;0\)</span>. Then <span class="math inline">\(n\leq x\)</span> rearranges to <span class="math inline">\(\frac1x\leq\frac1n\)</span>. Recall we are assuming this for all <span class="math inline">\(n\in\mathbb N\)</span>. By (c) we know that there exists <span class="math inline">\(n_1\in\mathbb N\)</span> such that <span class="math inline">\(\frac1{n_1}&lt;\frac1x\)</span>. This is a contradiction since we assume that no such <span class="math inline">\(n_1\)</span> existed.
+</li>
+<li style="list-style: &#39;(d ⇒ e) &#39;; padding-left: 12px;">
+Let <span class="math inline">\(S=\{m\in \mathbb N\mid x&lt;m\}\)</span>. This is a nonempty subset of <span class="math inline">\(\mathbb N\)</span> and thus by the Well Ordering Principle (Axiom 1.3.1) <span class="math inline">\(S\)</span> has a smallest element <span class="math inline">\(n\)</span>. Hence <span class="math inline">\(n-1\notin S\)</span>, and that implies that <span class="math inline">\(n-1\leq x\)</span>, but <span class="math inline">\(n\in S\)</span> implies <span class="math inline">\(x&lt;n\)</span>. Putting these two together gives <span class="math inline">\(n-1\leq x&lt;n\)</span>.
+</li>
+<li style="list-style: &#39;(a ⇐ e) &#39;; padding-left: 12px;">
+If for any <span class="math inline">\(x\in\mathbb R^+\)</span> we have an <span class="math inline">\(n\in\mathbb N\)</span> such that <span class="math inline">\(n-1\leq x&lt;n\)</span>, then we have found an <span class="math inline">\(n^*=n&gt;x\)</span>. This is precisely the requirement of the Archimedean Property, i.e. for any <span class="math inline">\(x\in \mathbb R\)</span>, we can find a natural number above <span class="math inline">\(x\)</span>. One caveat is that we started with a positive real number, but <span class="math inline">\(n^*=1\in\mathbb N\)</span> is greater than every negative real number (and zero too).
+</li>
+</ol>
+</div>
+We have shown that <span class="math inline">\(a\Rightarrow b\Rightarrow c \Rightarrow d \Rightarrow e \Rightarrow a\)</span> and hence every part implies every other part which shows they are all equivalent conditions. <span style="float:right"><span class="math inline">\(\blacksquare\)</span></span>
+</div>
+</div>
+<div id="existence-of-sqrt-2" class="section level2 hasAnchor" number="4.6">
+<h2><span class="header-section-number">4.6</span> Existence of <span class="math inline">\(\sqrt 2\)</span><a href="ordered-fields-and-a-real-number-system.html#existence-of-sqrt-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Now we are ready to see the existence of an irrational number!</p>
+<!-- ***Example:*** -->
+<!-- Corrolary.-->
+<!-- <div class="inner"> -->
+<p>Consider the set <span class="math inline">\(S=\{x\in \mathbb R\mid x^2 &lt; 2 \}\subset\mathbb R\)</span>. Intuitively <span class="math inline">\(\sup S=\sqrt2\)</span>, but how do we know that we are allowed to take square roots?</p>
+<p>We define “<span class="math inline">\(\sqrt{ \ \ }\)</span>” notation by the following: for <span class="math inline">\(b\in\mathbb R\)</span>, if <span class="math inline">\(b^2=a\)</span>, then we say <span class="math inline">\(b=\sqrt a\)</span>.</p>
+<p>Note that <span class="math inline">\(S\)</span> is a nonempty set and thus Axiom 13 implies that this set <span class="math inline">\(S\)</span> has a least upper bound that is also a real number, i.e. that <span class="math inline">\(b=\sup S\)</span> exists and <span class="math inline">\(b\in\mathbb R\)</span>. We simply denote this least upper bound <span class="math inline">\(b\)</span> by the notation <span class="math inline">\(\sqrt 2\)</span>, i.e. that
+<span class="math display">\[\sqrt 2 \overset{def}{=}\sup\{x\in \mathbb R\mid x^2 &lt; 2 \}\in\mathbb R\]</span></p>
+<p>We know that <span class="math inline">\(b\)</span> exists (by Axiom 13) and hence <span class="math inline">\(b^2\)</span> exists. By Trichotomy, either <span class="math inline">\(b^2=2\)</span>, <span class="math inline">\(b^2&lt;2\)</span> or <span class="math inline">\(b^2&gt;2\)</span>. We eliminate the last two by contradiction.</p>
+<div class="thmbox">
+<p><strong>Theorem.</strong> (not in text) There exists <span class="math inline">\(b\in\mathbb R\)</span> such that <span class="math inline">\(b^2=2\)</span>. We denote <span class="math inline">\(b\)</span> by <span class="math inline">\(\sqrt 2\)</span>.</p>
+<p><a href="javascript:unhide('thmsqrt2');">Show/hide proof.</a></p>
+<div id="thmsqrt2" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+<p><em>Proof that <span class="math inline">\((\sqrt 2)^2=2\)</span></em></p>
+We first assume that <span class="math inline">\(b=\sup S\)</span> as defined above.
+<ol class="cases-upper-roman">
+<li>
+Assume <span class="math inline">\(b^2&lt;2\)</span>. Then there exists an <span class="math inline">\(n\in\mathbb N\)</span> and <span class="math inline">\(a\in S\)</span> such that <span class="math inline">\(b^2+\frac{2b}n+\frac1{n^2}=\left(b+\frac1n\right)^2&lt;2\)</span>. To see that such an <span class="math inline">\(n\)</span> exists, recall that <span class="math inline">\(b^2&lt;2\)</span> and <span class="math inline">\(b&gt;0\)</span>. Then <span class="math inline">\(0&lt;2-b^2\)</span> and <span class="math inline">\(2b+1&gt;0\)</span>, thus we can find <span class="math inline">\(n\in\mathbb N\)</span> such that <span class="math inline">\(2b+1&lt;n(2-b^2)\)</span> by Theorem 1.7.9(b). Thus <span class="math inline">\((2b+1)n&lt;n^2(2-b^2)\)</span>. We also have <span class="math inline">\(n \geq 1\)</span>, and thus <span class="math inline">\(2bn+1\leq(2b+1)n&lt;n^2(2-b^2)\)</span>. Dividing by <span class="math inline">\(n^2\)</span> gives <span class="math inline">\(\frac{2b} n+\frac1{n^2}&lt;2-b^2\)</span>. Rearranging this and factoring gives <span class="math inline">\(\left(b+\frac1n\right)^2&lt;2\)</span>.
+<!-- <br><br> -->
+This implies that <span class="math inline">\(b+\frac1n\in S\)</span> and hence we have found an element of <span class="math inline">\(S\)</span> that is greater than <span class="math inline">\(\sup S\)</span>, a contradiction.
+<!-- </div> -->
+<!-- </div> -->
+</li>
+<li>
+Assume <span class="math inline">\(b^2&gt;2\)</span>. Then there exists an <span class="math inline">\(n\in\mathbb N\)</span> such that <span class="math inline">\(b^2-\frac{2b}n+\frac1{n^2}=\left(b-\frac1n\right)^2&gt;2\)</span>. The argument showing the existence of such an <span class="math inline">\(n\)</span> is very similar to above: <span class="math inline">\(b^2&gt;2\)</span> so that <span class="math inline">\(b^2-2&gt;0\)</span>. We also know that <span class="math inline">\(b&gt;0\)</span>.
+<!-- since it isn't hard to find a rational number $a\in S$ that is greater than $1$ but satisfying $a^2<2$ ($a=\frac43$ works or any rational of the form $a=\frac{k+1}{k}$ works) so that $2b-1>0$.  -->
+Now we know there is an <span class="math inline">\(n\in\mathbb N\)</span> such that <span class="math inline">\(n(b^2-2)&gt;2b\)</span> and thus <span class="math inline">\(n^2(b^2-2)&gt;n2b\)</span>. So <span class="math inline">\(b^2-2&gt;\frac{2b}{n}&gt;\frac{2b}{n}-\frac1{n^2}\)</span>. Then rearranging gives <span class="math inline">\(2&lt; b^2-\frac{2b}{n}+\frac1{n^2}=(b-\frac1n)^2\)</span>.
+<!-- <br> -->
+Theorem 1.7.7 gives that there exists <span class="math inline">\(a\in S\)</span> with <span class="math inline">\(b-\frac1n&lt;a\)</span>. This implies that <span class="math inline">\(2&lt; (b-\frac1n)^2&lt;a^2\)</span>, a contradiction since <span class="math inline">\(a\in S\)</span> implies <span class="math inline">\(a^2&lt;2\)</span>.
+<!-- This implies that $b-\frac1n$ is an upper bound on $S$. This is also a contradiction since $b-\frac1n<b$ but $b$ is the smallest upper bound on $S$. -->
+<!-- </div> -->
+<!-- </div> -->
+</li>
+</ol>
+<!-- Note that I am now overlooking some technicalities here, for example, in assuming that there exists an $n\in\mathbb N$ such that $b^2+\frac{2b}n+\frac1{n^2}<2$. Proving this requires a careful application of the Archimedean property, Axioms 1-12, and Theorem 1.7.9. Here is a somewhat tricky proof of that for Case I, if you wish to see it: <a href="javascript:unhide('sqrt2boundproof');">show/hide</a>. -->
+<!-- <div id="sqrt2boundproof" class="hiddendiv"> -->
+<!-- <div class="reveal" style="border-width: 0;"> -->
+<!-- Suppose $b^2<2$ and $b>0$. Then $0<2-b^2$ and $2b+1>0$, thus we can find $n\in\mathbb N$ such that $2b+1<n(2-b^2)$ by Theorem 1.7.9(b). Thus $(2b+1)n<n^2(2-b^2)$. We also have $n \geq 1$, and thus $2bn+1\leq(2b+1)n<n^2(2-b^2)$. Dividing by $n^2$ gives $\frac{2b} n+\frac1{n^2}<2-b^2$. Rearranging this and factoring gives $\left(b+\frac1n\right)^2<2$. -->
+<!-- </div> -->
+<!-- </div> -->
+<p>Since <span class="math inline">\(b^2&gt;2\)</span> and <span class="math inline">\(b^2&lt;2\)</span> are both eliminated, then by trichotomy, <span class="math inline">\(b^2=2\)</span> and we have demostrated that <span class="math inline">\(\sqrt2\)</span> is indeed a real number.
+<span style="float:right"><span class="math inline">\(\blacksquare\)</span></span></p>
+</div>
+</div>
+<!-- </div> -->
+<p><br></p>
+<p>It is not too complicated to prove that <span class="math inline">\(\sqrt 2\)</span> is not a rational number (see Example 1.4.3). This example illustrates that the existence of <span class="math inline">\(\sqrt 2\)</span> as a real number depends on that fact that we assume Axiom 13 is true for the set of real numbers. Note that nearly an identical argument shows the existence of <span class="math inline">\(\sqrt a\)</span> for any positive <span class="math inline">\(a\in\mathbb R\)</span>. Proving the existence of higher roots is more tricky, but can be done by induction.</p>
+<!-- **Theorem.** (not in text) $\sqrt 2$ is irrational. -->
+<div class="thmbox">
+<p><strong>Remark.</strong> (not in text) If <span class="math inline">\(n\in\mathbb N\)</span> and <span class="math inline">\(n\)</span> is not the perfect square of another natural number, then it is not a perfect square of a rational, hence <span class="math inline">\(\sqrt n\)</span> is irrational. This is given without proof, but you can find proof by searching online. It is very similar to the proof that <span class="math inline">\(\sqrt2\)</span> is irrational.</p>
+</div>
+</div>
+<div id="density-of-mathbb-q-in-mathbb-r" class="section level2 hasAnchor" number="4.7">
+<h2><span class="header-section-number">4.7</span> Density of <span class="math inline">\(\mathbb Q\)</span> in <span class="math inline">\(\mathbb R\)</span><a href="ordered-fields-and-a-real-number-system.html#density-of-mathbb-q-in-mathbb-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The next theorem tells us somethign about the relationship between the reals and rationals. It happens to be true that every interval on the real line contains both rationals and irrationals, in fact it contains infinitely-many of each!</p>
+<p>The rationals are called <em>dense</em> in <span class="math inline">\(\mathbb R\)</span> since they sort of fill up the real line almost entirely in the sense that every interval, no matter how small, contains rational numbers. Imagine a ruler with very fine resolution and individual black marks demarcating the different measurements available. You might imagine the resolution so fine that, unless you look at it with a microscope, you won’t be able to tell the ruler markings apart and it will just look like a continuous black smear. Although, you know that if you zoom in enough, you will be able to tell teh individual markings apart. The concept of density is kind of like this. From our perspective, the rational numbers essentially fill up the entire real number line, but if you have the proper mathematical tools, you can zoom in and see that there are uncountably-many gaps between the rational numbers.</p>
+<div class="thmbox">
+<p><strong>Theorem 1.7.10</strong>
+Every open interval <span class="math inline">\((a,b)\)</span> contains both a rational number and an irrational number.</p>
+<p><a href="javascript:unhide('thm1710');">Show/hide proof.</a></p>
+<div id="thm1710" class="hiddendiv">
+<!-- <div class="proofbox"> -->
+<p><em>Proof.</em> <!--Omitted.-->
+Let <span class="math inline">\(a,b\in \mathbb R\)</span> with <span class="math inline">\(a&lt;b\)</span>. So we have that <span class="math inline">\((a,b)=\{x\in \mathbb R\mid a&lt;x \text{ and } x&lt;b\}\)</span>.</p>
+<ol class="cases-upper-roman">
+<li>
+<!-- <div class="inner"> -->
+<!-- <ul> -->
+<!-- <li style="list-style: '<u>Case I</u> '; padding-left: 12px;"> -->
+<!-- <u>Case I</u>. -->
+<!-- <div class="inner2" style="padding-left: 12px;"> -->
+Suppose <span class="math inline">\(0&lt;a&lt;b\)</span>. Let <span class="math inline">\(x=b-a\)</span> and <span class="math inline">\(y=1\)</span>, then by Theorem 1.7.9(b), there exists an <span class="math inline">\(n^*\in\mathbb N\)</span> such that <span class="math inline">\(1&lt;n^*(b-a)\)</span> or <span class="math inline">\(\frac1{n^*}&lt;b-a\)</span>. Let <span class="math inline">\(S=\left\{n\in\mathbb N \mid \frac n{n^*}&gt;a\right\}\)</span>. <span class="math inline">\(S\)</span> is nonempty, hence by the well ordering principle, there is a least element in <span class="math inline">\(S\)</span>, <span class="math inline">\(n_0\)</span>. Then <span class="math inline">\(\frac{n_0}{n^*}&gt;a\)</span> and <span class="math inline">\(\frac{n_0-1}{n^*}\leq a\)</span> or <span class="math inline">\(\frac{n_0}{n^*}-\frac{1}{n^*}\leq a\)</span> . Then <span class="math inline">\(\frac{n_0}{n^*}\leq \frac{1}{n^*} +a &lt; (b-a) +a=b\)</span>. That is, <span class="math inline">\(\frac{n_0}{n^*}&gt;a\)</span> and <span class="math inline">\(\frac{n_0}{n^*}&lt;b\)</span>. Thus <span class="math inline">\(\frac{n_0}{n^*}\in(a,b)\)</span> and we found a rational number in this interval.
+<!-- </div> -->
+<!-- </div> -->
+<!-- </li> -->
+<!-- </ul> -->
+</li>
+<li>
+<!-- <div class="inner">  -->
+<!-- <u>Case II</u>. -->
+<!-- <div class="inner2" style="padding-left: 12px;"> -->
+Suppose <span class="math inline">\(a\leq 0&lt;b\)</span>. By Theorem 1.7.9, part (c), there exists <span class="math inline">\(n^*\in\mathbb N\)</span>, such that <span class="math inline">\(\frac1{n^*}&lt;b\)</span>. Thus, the rational number <span class="math inline">\(\frac1{n^*}\in(a,b)\)</span>.
+<!-- </div> -->
+<!-- </div> -->
+</li>
+<li>
+<!-- <div class="inner"> <u>Case III</u>. -->
+<!-- <div class="inner2" style="padding-left: 12px;"> -->
+Suppose <span class="math inline">\(a&lt;b\leq 0\)</span>. Then <span class="math inline">\(0\leq -b &lt;-a\)</span>. By Case I, there is a rational number <span class="math inline">\(r\in(-b,-a)\)</span>. Thus, the rational number <span class="math inline">\(-r\in(a,b)\)</span>.
+<!-- </div> -->
+<!-- </div> -->
+</li>
+</ol>
+<p>Now we have covered all possible cases for intervals of the form <span class="math inline">\((a,b)\)</span>, and they all contain at least one rational number.</p>
+<p>Now suppose <span class="math inline">\(a&lt;b\)</span>. Then there exists a nonzero rational number <span class="math inline">\(r\in\left(\frac a{\sqrt2} , \frac b{\sqrt2} \right)\)</span>. Hence <span class="math inline">\(\frac a{\sqrt2} &lt; r&lt; \frac b{\sqrt2}\)</span> which gives <span class="math inline">\(a&lt;r\sqrt2&lt;b\)</span>. It also happens to be true that <span class="math inline">\(r\sqrt2\)</span> is irrational. Thus any interval <span class="math inline">\((a,b)\)</span> contains an irrational.
+<span style="float:right"><span class="math inline">\(\blacksquare\)</span></span></p>
+</div>
+</div>
+<p>This last theorem is extremely interesting! You should recall that the rational numbers are countable and the irrationals are uncountable. See Theorems 1.6.8 and 1.6.9. If there is an irrational number between every two rational numbers and a rational number in between every two irrationals, then it feels intuitive that there are equivalent amount of each, but that intuition is misleading. Comparing infinities can give strange results! Since the irrationals are uncountable, there are really many more of them, in a sense.</p>
+<!-- **[\*\*EDIT\*\*] insert discussion on algebraic vs transcendental numbers (or leave out?)** -->
+</div>
+<div id="types-of-real-numbers" class="section level2 hasAnchor" number="4.8">
+<h2><span class="header-section-number">4.8</span> Types of real numbers<a href="ordered-fields-and-a-real-number-system.html#types-of-real-numbers" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>We already have the natural numbers, the integers, the rationals, and the irrationals. The irrational numbers are also classified as to whether or not they are the root of a polynomial with integer coefficients.</p>
+<div class="defbox">
+<p><strong>Definition</strong> A real number <span class="math inline">\(a\in\mathbb R\)</span> is called <em>algebraic</em> if there is a polynomial <span class="math inline">\(f(x)=a_n x^n+a_{n-1}x^{n-1}+\cdots a_1x+a_0\)</span> whose coefficients are all integers, <span class="math inline">\(a_i\in\mathbb Z\)</span> for all <span class="math inline">\(i=0,1,\ldots,n\)</span>, such that <span class="math inline">\(a\)</span> is a zero of this polynomial, <span class="math inline">\(f(a)=0\)</span>.</p>
+</div>
+<div class="defbox">
+<p><strong>Definition</strong> A real number <span class="math inline">\(a\in\mathbb R\)</span> is called <em>transcendental</em> if it is not algebraic.</p>
+</div>
+<p>The set of transcendental numbers has been proven to be uncountably infinite.</p>
+<div class="exbox">
+<strong><em>Example:</em></strong>
+<div class="inner">
+<p><span class="math inline">\(\sqrt2\)</span> is algebraic since it is a zero of the polynomial <span class="math inline">\(f(x)=x^2-2\)</span>.</p>
+<p>The irrational numbers <span class="math inline">\(\pi\)</span> and <span class="math inline">\(e\)</span> are transcendental. Proving this is generally very difficult. There are many famous transcendental numbers.</p>
+</div>
+</div>
+<p>All rational numbers are algebraic. Let <span class="math inline">\(\frac ab\in\mathbb Q\)</span>, then this number is a root of polynomial <span class="math inline">\(f(x)=ax-b\)</span>.</p>
+<p><span class="math display">\[
+\diamond \S \diamond
+\]</span></p>
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="background-material.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="some-properties-of-real-numbers.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+  "sharing": {
+    "github": false,
+    "facebook": true,
+    "twitter": true,
+    "linkedin": false,
+    "weibo": false,
+    "instapaper": false,
+    "vk": false,
+    "whatsapp": false,
+    "all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+  },
+  "fontsettings": {
+    "theme": "white",
+    "family": "sans",
+    "size": 2
+  },
+  "edit": {
+    "link": "https://github.com/jstover79/real_analysis_413/edit/main/04-reals-01.Rmd",
+    "text": "Edit"
+  },
+  "history": {
+    "link": null,
+    "text": null
+  },
+  "view": {
+    "link": "https://github.com/jstover79/real_analysis_413/blob/main/04-reals-01.Rmd",
+    "text": null
+  },
+  "download": null,
+  "search": {
+    "engine": "fuse",
+    "options": null
+  },
+  "toc": {
+    "collapse": "subsection"
+  }
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
