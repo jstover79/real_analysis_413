@@ -456,7 +456,7 @@ For any $x\in\mathbb R^+$, there exists $n\in\mathbb N$ such that $n-1\leq x< n$
 <!-- <div class="proofbox"> -->
 *Proof.*
 <div style="padding-left: 54px;">
-<ul>
+<ol>
 <li style="list-style: '(a &#8658; b) '; padding-left: 12px;">
 For any positive real numbers $x,y$ we have that $\frac yx$ is a positive real number, therefore by the Archimedean property, there is a natural number $n$ such that $\frac yx<n$ which implies that $y<nx$.
 </li>
