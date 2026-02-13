@@ -10,4 +10,4 @@ Often we use subscript notation instead: $x_n=f(n)$ or $a_k=f(k)$. It is typical
 
 ## Series
 
-A finite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n$ and and infinte series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n+a_{n+1}+\cdots$ and keeps going on forever.
+A finite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n$ and and infinite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n+a_{n+1}+\cdots$ and keeps going on forever.
