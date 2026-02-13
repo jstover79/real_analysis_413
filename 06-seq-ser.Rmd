@@ -8,6 +8,8 @@ A sequence of a function whose domain is the natural numbers $f(n)$ with $f:\mat
 
 Often we use subscript notation instead: $x_n=f(n)$ or $a_k=f(k)$. It is typical to use some kind of bracket notation too: $(x_n)_{n\in\mathbb N}$ or $\{x_n\}_{n\in\mathbb N}$. I prefer using parentheses and not curly braces as I like to restrict curly braces for sets. A sequence is not a set. Here is another common notation: $(x_n)_{n=1,2,\ldots}$.
 
+We'll discuss convergenc eof sequences first...
+
 ## Series
 
-A finite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n$ and and infinite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n+a_{n+1}+\cdots$ and keeps going on forever.
+A finite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n$ and and infinite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n+a_{n+1}+\cdots$ and keeps going on forever. 
