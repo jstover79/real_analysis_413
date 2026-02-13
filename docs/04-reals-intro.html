@@ -23,7 +23,7 @@
 <meta name="author" content="J. Stover" />
 
 
-<meta name="date" content="2026-02-12" />
+<meta name="date" content="2026-02-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -159,7 +159,7 @@
 <div id="ordered-fields-and-a-real-number-system" class="section level1 hasAnchor" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Ordered fields and a real number system<a href="04-reals-intro.html#ordered-fields-and-a-real-number-system" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <!--(Kosmala $\S$ 1.7)-->
-<p>(last updated: 3:16:58 PM, February 12, 2026)</p>
+<p>(last updated: 1:16:39 PM, February 13, 2026)</p>
 <!-- # Real numbers -->
 <p>You have worked with real numbers for a long time. What are they? How do you know they “exist”? Those are very intriguing questions! We start with developing the concept of a “field” and how the set of real numbers is a field.</p>
 <p>The set of Real numbers <span class="math inline">\(\mathbb R\)</span> is a <em>complete ordered field</em>. We’ll now explore what that means.</p>
@@ -235,9 +235,9 @@ Let <span class="math inline">\(a\in F\)</span>. Then we know that <span class="
 (-1)\cdot a&amp;=(-1)\cdot a+0 &amp;\quad &amp;\text{(Axiom 4, additive identity $0$ exists)}\\
 &amp;=(-1)\cdot a+(a+(-a)) &amp;\quad &amp;\text{(Axiom 5, additive inverse)}\\
 &amp;=((-1)\cdot a+a)+(-a) &amp;\quad &amp;\text{(Axiom 3, associative)}\\
+&amp;=((-1)\cdot a+1\cdot a)+(-a) &amp;\quad &amp;\text{(Axiom 6, mult. identity)}\\
 &amp;=((-1)+1)\cdot a+(-a) &amp;\quad &amp;\text{(Axiom 8, distributive)}\\
-&amp;=((-1)+1)\cdot a+(-a) &amp;\quad &amp;\text{(Axiom 6, mult. identity)}\\
-&amp;=0\cdot a+(-a) &amp;\quad &amp;\text{(Axiom 4, additive identity)}\\
+&amp;=0\cdot a+(-a) &amp;\quad &amp;\text{(Axiom 5, additive idnverse)}\\
 &amp;=0+(-a) &amp;\quad &amp;\text{(Part (c), this Theorem)}\\
 &amp;=(-a) &amp;\quad &amp;\text{(Axiom 4, additive identity)}\\
 \end{aligned}
@@ -333,7 +333,7 @@ and
 The ordering on the rational numbers is defined below when discussing how the order axioms apply to the rational numbers.</p>
 <p>For rational numbers, we define equivalence relation:
 <span class="math display">\[\frac ab=\frac cd \quad \text{ if and only if } \quad ad=bc\]</span>
-Then we define the ordering on the rational numbers by:
+Then we define the ordering on the rational numbers <span class="math inline">\(\frac ab\)</span> and <span class="math inline">\(\frac cd\)</span> with positive denominators <span class="math inline">\(b,d&gt;0\)</span> by:
 <span class="math display">\[\frac ab&lt;\frac cd \quad \text{ if and only if } \quad ad&lt;bc\]</span>
 <span class="math display">\[\frac ab&gt;\frac cd \quad \text{ if and only if } \quad ad&gt;bc\]</span>
 Now we have the necessary ingredients to derive all properties of rational numbers that we are accustomed to.</p>

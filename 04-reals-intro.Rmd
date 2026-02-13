@@ -64,9 +64,9 @@ $$
 (-1)\cdot a&=(-1)\cdot a+0 &\quad &\text{(Axiom 4, additive identity $0$ exists)}\\
 &=(-1)\cdot a+(a+(-a)) &\quad &\text{(Axiom 5, additive inverse)}\\
 &=((-1)\cdot a+a)+(-a) &\quad &\text{(Axiom 3, associative)}\\
+&=((-1)\cdot a+1\cdot a)+(-a) &\quad &\text{(Axiom 6, mult. identity)}\\
 &=((-1)+1)\cdot a+(-a) &\quad &\text{(Axiom 8, distributive)}\\
-&=((-1)+1)\cdot a+(-a) &\quad &\text{(Axiom 6, mult. identity)}\\
-&=0\cdot a+(-a) &\quad &\text{(Axiom 4, additive identity)}\\
+&=0\cdot a+(-a) &\quad &\text{(Axiom 5, additive idnverse)}\\
 &=0+(-a) &\quad &\text{(Part (c), this Theorem)}\\
 &=(-a) &\quad &\text{(Axiom 4, additive identity)}\\
 \end{aligned}
@@ -174,7 +174,7 @@ The ordering on the rational numbers is defined below when discussing how the or
 
 For rational numbers, we define equivalence relation:
 $$\frac ab=\frac cd \quad \text{ if and only if } \quad ad=bc$$
-Then we define the ordering on the rational numbers by:
+Then we define the ordering on the rational numbers $\frac ab$ and $\frac cd$ with positive denominators $b,d>0$ by:
 $$\frac ab<\frac cd \quad \text{ if and only if } \quad ad<bc$$
 $$\frac ab>\frac cd \quad \text{ if and only if } \quad ad>bc$$
 Now we have the necessary ingredients to derive all properties of rational numbers that we are accustomed to.
