@@ -11,7 +11,7 @@ output:
 
 # Introduction
 
-These are course notes for Math 413 Real Analysis I. They are a work in progress!
+These are course notes for Math 413 Real Analysis I. They are a work in progress! I will update these throughout the semester...
 
 
 
