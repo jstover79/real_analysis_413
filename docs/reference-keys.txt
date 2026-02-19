@@ -32,3 +32,5 @@ limits-at-infinity
 one-sided-limits
 continuity
 uniform-continuity
+subsequences
+monotone-sequences
