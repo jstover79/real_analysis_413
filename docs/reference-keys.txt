@@ -34,3 +34,4 @@ continuity
 uniform-continuity
 subsequences
 monotone-sequences
+limsup-and-liminf

@@ -14,6 +14,8 @@ We'll discuss convergence of sequences first... (under construction...)
 
 ### Monotone sequences
 
+### Limsup and liminf
+
 ## Series
 
 A finite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n$ and and infinite series is $\sum_{j=1}^n a_j=a_1+a_2+\cdots+a_n+a_{n+1}+\cdots$ and keeps going on forever. 
